@@ -1,23 +1,14 @@
-//
-//  sunmapAppDelegate.cpp
-//  sunmap
-//
-//  Created by iclient on 13-5-22.
-//  Copyright __MyCompanyName__ 2013年. All rights reserved.
-//
-
-#include "AppDelegate.h"
-
 #include "cocos2d.h"
-#include "SimpleAudioEngine.h"
+#include "CCEGLView.h"
+#include "AppDelegate.h"
 #include "HelloWorldScene.h"
 
+#include "PublicMsgHandler.h"
+
 USING_NS_CC;
-using namespace CocosDenshion;
 
 AppDelegate::AppDelegate()
 {
-
 }
 
 AppDelegate::~AppDelegate()
@@ -26,6 +17,8 @@ AppDelegate::~AppDelegate()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
+	PublicMsgHandler* pMsgHandler=new PublicMsgHandler();
+
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
@@ -37,11 +30,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
+    CCScene *pScene = HelloWorld::scene(pMsgHandler);
 
     // run
     pDirector->runWithScene(pScene);
-
     return true;
 }
 
@@ -49,14 +41,10 @@ bool AppDelegate::applicationDidFinishLaunching()
 void AppDelegate::applicationDidEnterBackground()
 {
     CCDirector::sharedDirector()->stopAnimation();
-    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
-    SimpleAudioEngine::sharedEngine()->pauseAllEffects();
 }
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground()
 {
     CCDirector::sharedDirector()->startAnimation();
-    SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
-    SimpleAudioEngine::sharedEngine()->resumeAllEffects();
 }

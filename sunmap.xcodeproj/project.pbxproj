@@ -220,6 +220,32 @@
 		FE0C65BB174CCB0300F9F655 /* cocos2dx-ext_public.defines.txt in Resources */ = {isa = PBXBuildFile; fileRef = FE0C65BA174CCB0300F9F655 /* cocos2dx-ext_public.defines.txt */; };
 		FE0C65C1174CCB0300F9F655 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65C0174CCB0300F9F655 /* AppDelegate.cpp */; };
 		FE0C65C4174CCB0300F9F655 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65C3174CCB0300F9F655 /* HelloWorldScene.cpp */; };
+		FE0C65F8174CCB3300F9F655 /* AMapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65CA174CCB3300F9F655 /* AMapStrategy.cpp */; };
+		FE0C65F9174CCB3300F9F655 /* ArcGisMapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65CC174CCB3300F9F655 /* ArcGisMapStrategy.cpp */; };
+		FE0C65FA174CCB3300F9F655 /* BingMapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65CE174CCB3300F9F655 /* BingMapStrategy.cpp */; };
+		FE0C65FB174CCB3300F9F655 /* BitmapCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65D0174CCB3300F9F655 /* BitmapCache.cpp */; };
+		FE0C65FC174CCB3300F9F655 /* GeoUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65D2174CCB3300F9F655 /* GeoUtils.cpp */; };
+		FE0C65FD174CCB3300F9F655 /* GoogleSatelliteMapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65D4174CCB3300F9F655 /* GoogleSatelliteMapStrategy.cpp */; };
+		FE0C65FE174CCB3300F9F655 /* GoogleTerrainMapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65D6174CCB3300F9F655 /* GoogleTerrainMapStrategy.cpp */; };
+		FE0C65FF174CCB3300F9F655 /* GoogleVectorMapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65D8174CCB3300F9F655 /* GoogleVectorMapStrategy.cpp */; };
+		FE0C6600174CCB3300F9F655 /* MapControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65DA174CCB3300F9F655 /* MapControl.cpp */; };
+		FE0C6601174CCB3300F9F655 /* MapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65DC174CCB3300F9F655 /* MapStrategy.cpp */; };
+		FE0C6602174CCB3300F9F655 /* MapStrategyFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65DE174CCB3300F9F655 /* MapStrategyFactory.cpp */; };
+		FE0C6603174CCB3300F9F655 /* OpenStreetMapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65E0174CCB3300F9F655 /* OpenStreetMapStrategy.cpp */; };
+		FE0C6604174CCB3300F9F655 /* PhysicMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65E2174CCB3300F9F655 /* PhysicMap.cpp */; };
+		FE0C6605174CCB3300F9F655 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65E4174CCB3300F9F655 /* Point.cpp */; };
+		FE0C6606174CCB3300F9F655 /* PublicMsgHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65E6174CCB3300F9F655 /* PublicMsgHandler.cpp */; };
+		FE0C6607174CCB3300F9F655 /* RawTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65E8174CCB3300F9F655 /* RawTile.cpp */; };
+		FE0C6609174CCB3300F9F655 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65EB174CCB3300F9F655 /* sqlite3.c */; };
+		FE0C660A174CCB3300F9F655 /* SqliteLocalStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65EE174CCB3300F9F655 /* SqliteLocalStorage.cpp */; };
+		FE0C660B174CCB3300F9F655 /* SuperMapCloudMapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65F0174CCB3300F9F655 /* SuperMapCloudMapStrategy.cpp */; };
+		FE0C660C174CCB3300F9F655 /* TiandituMapStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65F2174CCB3300F9F655 /* TiandituMapStrategy.cpp */; };
+		FE0C660D174CCB3300F9F655 /* TileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65F4174CCB3300F9F655 /* TileLoader.cpp */; };
+		FE0C660E174CCB3300F9F655 /* TileResolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65F6174CCB3300F9F655 /* TileResolver.cpp */; };
+		FE5254BC174DC6060079431E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5254BB174DC6060079431E /* Default-568h@2x.png */; };
+		FE93EF62174CCF1100CC7274 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FE93EF5F174CCF1100CC7274 /* bg.png */; };
+		FE93EF63174CCF1100CC7274 /* zoomin.png in Resources */ = {isa = PBXBuildFile; fileRef = FE93EF60174CCF1100CC7274 /* zoomin.png */; };
+		FE93EF64174CCF1100CC7274 /* zoomout.png in Resources */ = {isa = PBXBuildFile; fileRef = FE93EF61174CCF1100CC7274 /* zoomout.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -690,6 +716,55 @@
 		FE0C65C0174CCB0300F9F655 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		FE0C65C2174CCB0300F9F655 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		FE0C65C3174CCB0300F9F655 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		FE0C65CA174CCB3300F9F655 /* AMapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AMapStrategy.cpp; path = Classes/AMapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65CB174CCB3300F9F655 /* AMapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMapStrategy.h; path = Classes/AMapStrategy.h; sourceTree = "<group>"; };
+		FE0C65CC174CCB3300F9F655 /* ArcGisMapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ArcGisMapStrategy.cpp; path = Classes/ArcGisMapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65CD174CCB3300F9F655 /* ArcGisMapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArcGisMapStrategy.h; path = Classes/ArcGisMapStrategy.h; sourceTree = "<group>"; };
+		FE0C65CE174CCB3300F9F655 /* BingMapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BingMapStrategy.cpp; path = Classes/BingMapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65CF174CCB3300F9F655 /* BingMapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BingMapStrategy.h; path = Classes/BingMapStrategy.h; sourceTree = "<group>"; };
+		FE0C65D0174CCB3300F9F655 /* BitmapCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BitmapCache.cpp; path = Classes/BitmapCache.cpp; sourceTree = "<group>"; };
+		FE0C65D1174CCB3300F9F655 /* BitmapCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BitmapCache.h; path = Classes/BitmapCache.h; sourceTree = "<group>"; };
+		FE0C65D2174CCB3300F9F655 /* GeoUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GeoUtils.cpp; path = Classes/GeoUtils.cpp; sourceTree = "<group>"; };
+		FE0C65D3174CCB3300F9F655 /* GeoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoUtils.h; path = Classes/GeoUtils.h; sourceTree = "<group>"; };
+		FE0C65D4174CCB3300F9F655 /* GoogleSatelliteMapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GoogleSatelliteMapStrategy.cpp; path = Classes/GoogleSatelliteMapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65D5174CCB3300F9F655 /* GoogleSatelliteMapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleSatelliteMapStrategy.h; path = Classes/GoogleSatelliteMapStrategy.h; sourceTree = "<group>"; };
+		FE0C65D6174CCB3300F9F655 /* GoogleTerrainMapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GoogleTerrainMapStrategy.cpp; path = Classes/GoogleTerrainMapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65D7174CCB3300F9F655 /* GoogleTerrainMapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleTerrainMapStrategy.h; path = Classes/GoogleTerrainMapStrategy.h; sourceTree = "<group>"; };
+		FE0C65D8174CCB3300F9F655 /* GoogleVectorMapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GoogleVectorMapStrategy.cpp; path = Classes/GoogleVectorMapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65D9174CCB3300F9F655 /* GoogleVectorMapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleVectorMapStrategy.h; path = Classes/GoogleVectorMapStrategy.h; sourceTree = "<group>"; };
+		FE0C65DA174CCB3300F9F655 /* MapControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapControl.cpp; path = Classes/MapControl.cpp; sourceTree = "<group>"; };
+		FE0C65DB174CCB3300F9F655 /* MapControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapControl.h; path = Classes/MapControl.h; sourceTree = "<group>"; };
+		FE0C65DC174CCB3300F9F655 /* MapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapStrategy.cpp; path = Classes/MapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65DD174CCB3300F9F655 /* MapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapStrategy.h; path = Classes/MapStrategy.h; sourceTree = "<group>"; };
+		FE0C65DE174CCB3300F9F655 /* MapStrategyFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapStrategyFactory.cpp; path = Classes/MapStrategyFactory.cpp; sourceTree = "<group>"; };
+		FE0C65DF174CCB3300F9F655 /* MapStrategyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapStrategyFactory.h; path = Classes/MapStrategyFactory.h; sourceTree = "<group>"; };
+		FE0C65E0174CCB3300F9F655 /* OpenStreetMapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpenStreetMapStrategy.cpp; path = Classes/OpenStreetMapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65E1174CCB3300F9F655 /* OpenStreetMapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenStreetMapStrategy.h; path = Classes/OpenStreetMapStrategy.h; sourceTree = "<group>"; };
+		FE0C65E2174CCB3300F9F655 /* PhysicMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicMap.cpp; path = Classes/PhysicMap.cpp; sourceTree = "<group>"; };
+		FE0C65E3174CCB3300F9F655 /* PhysicMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicMap.h; path = Classes/PhysicMap.h; sourceTree = "<group>"; };
+		FE0C65E4174CCB3300F9F655 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Point.cpp; path = Classes/Point.cpp; sourceTree = "<group>"; };
+		FE0C65E5174CCB3300F9F655 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Point.h; path = Classes/Point.h; sourceTree = "<group>"; };
+		FE0C65E6174CCB3300F9F655 /* PublicMsgHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PublicMsgHandler.cpp; path = Classes/PublicMsgHandler.cpp; sourceTree = "<group>"; };
+		FE0C65E7174CCB3300F9F655 /* PublicMsgHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PublicMsgHandler.h; path = Classes/PublicMsgHandler.h; sourceTree = "<group>"; };
+		FE0C65E8174CCB3300F9F655 /* RawTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RawTile.cpp; path = Classes/RawTile.cpp; sourceTree = "<group>"; };
+		FE0C65E9174CCB3300F9F655 /* RawTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RawTile.h; path = Classes/RawTile.h; sourceTree = "<group>"; };
+		FE0C65EB174CCB3300F9F655 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite3.c; path = Classes/sqlite3.c; sourceTree = "<group>"; };
+		FE0C65EC174CCB3300F9F655 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = Classes/sqlite3.h; sourceTree = "<group>"; };
+		FE0C65ED174CCB3300F9F655 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3ext.h; path = Classes/sqlite3ext.h; sourceTree = "<group>"; };
+		FE0C65EE174CCB3300F9F655 /* SqliteLocalStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SqliteLocalStorage.cpp; path = Classes/SqliteLocalStorage.cpp; sourceTree = "<group>"; };
+		FE0C65EF174CCB3300F9F655 /* SqliteLocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SqliteLocalStorage.h; path = Classes/SqliteLocalStorage.h; sourceTree = "<group>"; };
+		FE0C65F0174CCB3300F9F655 /* SuperMapCloudMapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SuperMapCloudMapStrategy.cpp; path = Classes/SuperMapCloudMapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65F1174CCB3300F9F655 /* SuperMapCloudMapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuperMapCloudMapStrategy.h; path = Classes/SuperMapCloudMapStrategy.h; sourceTree = "<group>"; };
+		FE0C65F2174CCB3300F9F655 /* TiandituMapStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TiandituMapStrategy.cpp; path = Classes/TiandituMapStrategy.cpp; sourceTree = "<group>"; };
+		FE0C65F3174CCB3300F9F655 /* TiandituMapStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiandituMapStrategy.h; path = Classes/TiandituMapStrategy.h; sourceTree = "<group>"; };
+		FE0C65F4174CCB3300F9F655 /* TileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TileLoader.cpp; path = Classes/TileLoader.cpp; sourceTree = "<group>"; };
+		FE0C65F5174CCB3300F9F655 /* TileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TileLoader.h; path = Classes/TileLoader.h; sourceTree = "<group>"; };
+		FE0C65F6174CCB3300F9F655 /* TileResolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TileResolver.cpp; path = Classes/TileResolver.cpp; sourceTree = "<group>"; };
+		FE0C65F7174CCB3300F9F655 /* TileResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TileResolver.h; path = Classes/TileResolver.h; sourceTree = "<group>"; };
+		FE5254BB174DC6060079431E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FE93EF5F174CCF1100CC7274 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Resources/bg.png; sourceTree = "<group>"; };
+		FE93EF60174CCF1100CC7274 /* zoomin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoomin.png; path = Resources/zoomin.png; sourceTree = "<group>"; };
+		FE93EF61174CCF1100CC7274 /* zoomout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoomout.png; path = Resources/zoomout.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -716,6 +791,7 @@
 		FE0C62D4174CCAFE00F9F655 = {
 			isa = PBXGroup;
 			children = (
+				FE5254BB174DC6060079431E /* Default-568h@2x.png */,
 				FE0C62F0174CCAFE00F9F655 /* sunmap */,
 				FE0C62DF174CCAFE00F9F655 /* Frameworks */,
 				FE0C62DE174CCAFE00F9F655 /* Products */,
@@ -760,6 +836,9 @@
 		FE0C62F1174CCAFE00F9F655 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FE93EF5F174CCF1100CC7274 /* bg.png */,
+				FE93EF60174CCF1100CC7274 /* zoomin.png */,
+				FE93EF61174CCF1100CC7274 /* zoomout.png */,
 				FE0C62F2174CCAFE00F9F655 /* CloseNormal.png */,
 				FE0C62F4174CCAFE00F9F655 /* CloseSelected.png */,
 				FE0C62F6174CCAFE00F9F655 /* Default.png */,
@@ -1690,6 +1769,51 @@
 		FE0C65BE174CCB0300F9F655 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FE0C65CA174CCB3300F9F655 /* AMapStrategy.cpp */,
+				FE0C65CB174CCB3300F9F655 /* AMapStrategy.h */,
+				FE0C65CC174CCB3300F9F655 /* ArcGisMapStrategy.cpp */,
+				FE0C65CD174CCB3300F9F655 /* ArcGisMapStrategy.h */,
+				FE0C65CE174CCB3300F9F655 /* BingMapStrategy.cpp */,
+				FE0C65CF174CCB3300F9F655 /* BingMapStrategy.h */,
+				FE0C65D0174CCB3300F9F655 /* BitmapCache.cpp */,
+				FE0C65D1174CCB3300F9F655 /* BitmapCache.h */,
+				FE0C65D2174CCB3300F9F655 /* GeoUtils.cpp */,
+				FE0C65D3174CCB3300F9F655 /* GeoUtils.h */,
+				FE0C65D4174CCB3300F9F655 /* GoogleSatelliteMapStrategy.cpp */,
+				FE0C65D5174CCB3300F9F655 /* GoogleSatelliteMapStrategy.h */,
+				FE0C65D6174CCB3300F9F655 /* GoogleTerrainMapStrategy.cpp */,
+				FE0C65D7174CCB3300F9F655 /* GoogleTerrainMapStrategy.h */,
+				FE0C65D8174CCB3300F9F655 /* GoogleVectorMapStrategy.cpp */,
+				FE0C65D9174CCB3300F9F655 /* GoogleVectorMapStrategy.h */,
+				FE0C65DA174CCB3300F9F655 /* MapControl.cpp */,
+				FE0C65DB174CCB3300F9F655 /* MapControl.h */,
+				FE0C65DC174CCB3300F9F655 /* MapStrategy.cpp */,
+				FE0C65DD174CCB3300F9F655 /* MapStrategy.h */,
+				FE0C65DE174CCB3300F9F655 /* MapStrategyFactory.cpp */,
+				FE0C65DF174CCB3300F9F655 /* MapStrategyFactory.h */,
+				FE0C65E0174CCB3300F9F655 /* OpenStreetMapStrategy.cpp */,
+				FE0C65E1174CCB3300F9F655 /* OpenStreetMapStrategy.h */,
+				FE0C65E2174CCB3300F9F655 /* PhysicMap.cpp */,
+				FE0C65E3174CCB3300F9F655 /* PhysicMap.h */,
+				FE0C65E4174CCB3300F9F655 /* Point.cpp */,
+				FE0C65E5174CCB3300F9F655 /* Point.h */,
+				FE0C65E6174CCB3300F9F655 /* PublicMsgHandler.cpp */,
+				FE0C65E7174CCB3300F9F655 /* PublicMsgHandler.h */,
+				FE0C65E8174CCB3300F9F655 /* RawTile.cpp */,
+				FE0C65E9174CCB3300F9F655 /* RawTile.h */,
+				FE0C65EB174CCB3300F9F655 /* sqlite3.c */,
+				FE0C65EC174CCB3300F9F655 /* sqlite3.h */,
+				FE0C65ED174CCB3300F9F655 /* sqlite3ext.h */,
+				FE0C65EE174CCB3300F9F655 /* SqliteLocalStorage.cpp */,
+				FE0C65EF174CCB3300F9F655 /* SqliteLocalStorage.h */,
+				FE0C65F0174CCB3300F9F655 /* SuperMapCloudMapStrategy.cpp */,
+				FE0C65F1174CCB3300F9F655 /* SuperMapCloudMapStrategy.h */,
+				FE0C65F2174CCB3300F9F655 /* TiandituMapStrategy.cpp */,
+				FE0C65F3174CCB3300F9F655 /* TiandituMapStrategy.h */,
+				FE0C65F4174CCB3300F9F655 /* TileLoader.cpp */,
+				FE0C65F5174CCB3300F9F655 /* TileLoader.h */,
+				FE0C65F6174CCB3300F9F655 /* TileResolver.cpp */,
+				FE0C65F7174CCB3300F9F655 /* TileResolver.h */,
 				FE0C65BF174CCB0300F9F655 /* AppDelegate.h */,
 				FE0C65C0174CCB0300F9F655 /* AppDelegate.cpp */,
 				FE0C65C2174CCB0300F9F655 /* HelloWorldScene.h */,
@@ -1763,6 +1887,10 @@
 				FE0C650D174CCB0200F9F655 /* project.pbxproj in Resources */,
 				FE0C65B9174CCB0300F9F655 /* cocos2dx-ext.mkf in Resources */,
 				FE0C65BB174CCB0300F9F655 /* cocos2dx-ext_public.defines.txt in Resources */,
+				FE93EF62174CCF1100CC7274 /* bg.png in Resources */,
+				FE93EF63174CCF1100CC7274 /* zoomin.png in Resources */,
+				FE93EF64174CCF1100CC7274 /* zoomout.png in Resources */,
+				FE5254BC174DC6060079431E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1961,6 +2089,28 @@
 				FE0C65B5174CCB0300F9F655 /* CCPhysicsSprite.cpp in Sources */,
 				FE0C65C1174CCB0300F9F655 /* AppDelegate.cpp in Sources */,
 				FE0C65C4174CCB0300F9F655 /* HelloWorldScene.cpp in Sources */,
+				FE0C65F8174CCB3300F9F655 /* AMapStrategy.cpp in Sources */,
+				FE0C65F9174CCB3300F9F655 /* ArcGisMapStrategy.cpp in Sources */,
+				FE0C65FA174CCB3300F9F655 /* BingMapStrategy.cpp in Sources */,
+				FE0C65FB174CCB3300F9F655 /* BitmapCache.cpp in Sources */,
+				FE0C65FC174CCB3300F9F655 /* GeoUtils.cpp in Sources */,
+				FE0C65FD174CCB3300F9F655 /* GoogleSatelliteMapStrategy.cpp in Sources */,
+				FE0C65FE174CCB3300F9F655 /* GoogleTerrainMapStrategy.cpp in Sources */,
+				FE0C65FF174CCB3300F9F655 /* GoogleVectorMapStrategy.cpp in Sources */,
+				FE0C6600174CCB3300F9F655 /* MapControl.cpp in Sources */,
+				FE0C6601174CCB3300F9F655 /* MapStrategy.cpp in Sources */,
+				FE0C6602174CCB3300F9F655 /* MapStrategyFactory.cpp in Sources */,
+				FE0C6603174CCB3300F9F655 /* OpenStreetMapStrategy.cpp in Sources */,
+				FE0C6604174CCB3300F9F655 /* PhysicMap.cpp in Sources */,
+				FE0C6605174CCB3300F9F655 /* Point.cpp in Sources */,
+				FE0C6606174CCB3300F9F655 /* PublicMsgHandler.cpp in Sources */,
+				FE0C6607174CCB3300F9F655 /* RawTile.cpp in Sources */,
+				FE0C6609174CCB3300F9F655 /* sqlite3.c in Sources */,
+				FE0C660A174CCB3300F9F655 /* SqliteLocalStorage.cpp in Sources */,
+				FE0C660B174CCB3300F9F655 /* SuperMapCloudMapStrategy.cpp in Sources */,
+				FE0C660C174CCB3300F9F655 /* TiandituMapStrategy.cpp in Sources */,
+				FE0C660D174CCB3300F9F655 /* TileLoader.cpp in Sources */,
+				FE0C660E174CCB3300F9F655 /* TileResolver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2031,12 +2181,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yu Ye (XKCTHAVGU4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yu Ye (XKCTHAVGU4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = sunmap/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = sunmap/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/sunmap/libs/cocos2dx/platform/third_party/ios/libraries\"",
@@ -2047,6 +2200,8 @@
 					"-lsqlite3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BD6C27E0-5439-4C99-BC41-CDFE5F05C296";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2055,11 +2210,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yu Ye (XKCTHAVGU4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yu Ye (XKCTHAVGU4)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = sunmap/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = sunmap/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/sunmap/libs/cocos2dx/platform/third_party/ios/libraries\"",
@@ -2070,6 +2228,8 @@
 					"-lsqlite3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BD6C27E0-5439-4C99-BC41-CDFE5F05C296";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2094,6 +2254,7 @@
 				FE0C65C9174CCB0300F9F655 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

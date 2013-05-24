@@ -1,20 +1,12 @@
-//
-//  sunmapAppDelegate.h
-//  sunmap
-//
-//  Created by iclient on 13-5-22.
-//  Copyright __MyCompanyName__ 2013年. All rights reserved.
-//
+#ifndef __APP_DELEGATE_H__
+#define __APP_DELEGATE_H__
 
-#ifndef  _APP_DELEGATE_H_
-#define  _APP_DELEGATE_H_
-
-#include "CCApplication.h"
+#include "cocos2d.h"
 
 /**
 @brief    The cocos2d Application.
 
-The reason to implement with private inheritance is to hide some interface details of CCDirector.
+The reason for implement as private inheritance is to hide some interface call by CCDirector.
 */
 class  AppDelegate : private cocos2d::CCApplication
 {
@@ -30,17 +22,17 @@ public:
     virtual bool applicationDidFinishLaunching();
 
     /**
-    @brief  The function is called when the application enters the background
-    @param  the pointer of the application instance
+    @brief  The function be called when the application enter background
+    @param  the pointer of the application
     */
     virtual void applicationDidEnterBackground();
 
     /**
-    @brief  The function is called when the application enters the foreground
-    @param  the pointer of the application instance
+    @brief  The function be called when the application enter foreground
+    @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
 };
 
-#endif // _APP_DELEGATE_H_
+#endif  // __APP_DELEGATE_H__
 
