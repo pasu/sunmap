@@ -18,7 +18,7 @@ public:
 	CCImage* getTile(RawTile* pTile);
 	void clear(bool bForce = false);
 
-	void putToCache(RawTile* pTile, CCImage* pData);
+	bool putToCache(RawTile* pTile, CCImage* pData);
 
 private:
 	std::map<std::string,CCImage*> m_DataCache;

@@ -19,36 +19,27 @@ CCImage* BitmapCache::getTile( RawTile* pTile )
 	return pData;
 }
 
-void BitmapCache::putToCache( RawTile* pTile, CCImage* pData )
+bool BitmapCache::putToCache( RawTile* pTile, CCImage* pData )
 {
 	pthread_mutex_lock(&mutex);
 
+	CCImage* ppData = NULL;
+	std::map<std::string,CCImage*>::iterator l_it;
+
+	l_it=m_DataCache.find(pTile->toString().getCString());
+	if(l_it!=m_DataCache.end ())
+	{
+		delete pData;
+		pData = NULL;
+		pthread_mutex_unlock(&mutex);
+		return false;
+	}
+
 	m_DataCache.insert(std::map<std::string,CCImage*>::value_type(pTile->toString().getCString(),pData));
-    m_Index.push_back(pTile->toString().getCString());
+	m_Index.push_back(pTile->toString().getCString());
     
-//      if(m_Index.size()>BitmapCache::CACHE_SIZE)
-//      {
-//          for(int i=0;i<BitmapCache::CACHE_SIZE/2;i++)
-//          {
-//              std::string strIndex = m_Index[i];
-//              
-//              std::map<std::string,CCImage*>::iterator l_it;
-//              
-//              l_it=m_DataCache.find(strIndex);
-//              if(l_it!=m_DataCache.end ())
-//              {
-//                  CCImage* ppData = l_it->second;
-//              
-//                  m_DataCache.erase(l_it);
-//                 // delete ppData->pImage;
-//                  delete ppData;
-//              }
-//              
-//          }
-//          
-//          m_Index.erase(m_Index.begin(),m_Index.begin()+BitmapCache::CACHE_SIZE/2);
-//     }    
 	pthread_mutex_unlock(&mutex);
+	return true;
 }
 
 BitmapCache::~BitmapCache()

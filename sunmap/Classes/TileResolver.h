@@ -27,7 +27,7 @@ public:
 
 	 void updateMap(RawTile* pTile, CCImage* pTexture);
 
-	 void put2Cache(RawTile* pTile, CCImage* pTexture);
+	 bool put2Cache(RawTile* pTile, CCImage* pTexture);
 
 	 void clearQueue();
 	 void clearCache(bool bForce = false);

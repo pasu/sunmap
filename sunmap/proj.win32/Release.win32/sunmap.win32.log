@@ -1,0 +1,106 @@
+﻿生成启动时间为 2013/5/25 14:20:12。
+     1>项目“G:\vscode\cocos2d-2.1beta3-x-2.1.1\sunmap-master\sunmap\proj.win32\sunmap.win32.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Release.win32\sunmap.win32.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\include" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\kazmath\include" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\win32" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32\OGLES" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\sunmap-master\sunmap\proj.win32\..\..\..\..\extensions" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32\pthread" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AMapStrategy.cpp ..\Classes\AppDelegate.cpp ..\Classes\ArcGisMapStrategy.cpp ..\Classes\BingMapStrategy.cpp ..\Classes\BitmapCache.cpp ..\Classes\ControlLayer.cpp ..\Classes\GeoUtils.cpp ..\Classes\GoogleSatelliteMapStrategy.cpp ..\Classes\GoogleTerrainMapStrategy.cpp ..\Classes\GoogleVectorMapStrategy.cpp ..\Classes\HelloWorldScene.cpp ..\Classes\MapControl.cpp ..\Classes\MapStrategy.cpp ..\Classes\MapStrategyFactory.cpp ..\Classes\OpenStreetMapStrategy.cpp ..\Classes\PhysicMap.cpp ..\Classes\Point.cpp ..\Classes\PublicMsgHandler.cpp ..\Classes\RawTile.cpp ..\Classes\SqliteLocalStorage.cpp ..\Classes\SuperMapCloudMapStrategy.cpp ..\Classes\TiandituMapStrategy.cpp ..\Classes\TileLoader.cpp ..\Classes\TileResolver.cpp main.cpp
+         AMapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         AppDelegate.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         ArcGisMapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         BingMapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         BitmapCache.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>..\Classes\BitmapCache.cpp(52): warning C4018: “>”: 有符号/无符号不匹配
+         ControlLayer.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         GeoUtils.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         GoogleSatelliteMapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         GoogleTerrainMapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         GoogleVectorMapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         HelloWorldScene.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         MapControl.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>..\Classes\MapControl.cpp(67): warning C4305: “参数”: 从“double”到“float”截断
+         MapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         MapStrategyFactory.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         OpenStreetMapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         PhysicMap.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         Point.cpp
+         PublicMsgHandler.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         RawTile.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         SqliteLocalStorage.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         正在生成代码...
+         正在编译...
+         SuperMapCloudMapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         TiandituMapStrategy.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         TileLoader.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         TileResolver.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         main.cpp
+     1>D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+         正在生成代码...
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\include" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\kazmath\include" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\win32" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32\OGLES" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\sunmap-master\sunmap\proj.win32\..\..\..\..\extensions" /I"G:\vscode\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32\pthread" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TC /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\shell.c ..\Classes\sqlite3.c
+         shell.c
+         sqlite3.c
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /l"0x0409" /IRelease.win32\ /nologo /fo"Release.win32\sunmap.res" sunmap.rc 
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\vscode\cocos2d-2.1beta3-x-2.1.1\Release.win32\sunmap.win32.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"G:\vscode\cocos2d-2.1beta3-x-2.1.1\Release.win32\\" libcocos2d.lib opengl32.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libcurl_imp.lib pthreadVCE2.lib /MANIFEST /ManifestFile:"Release.win32\sunmap.win32.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"G:\vscode\cocos2d-2.1beta3-x-2.1.1\Release.win32\sunmap.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\vscode\cocos2d-2.1beta3-x-2.1.1\Release.win32\sunmap.win32.lib" /MACHINE:X86 Release.win32\sunmap.res
+         Release.win32\AMapStrategy.obj
+         Release.win32\AppDelegate.obj
+         Release.win32\ArcGisMapStrategy.obj
+         Release.win32\BingMapStrategy.obj
+         Release.win32\BitmapCache.obj
+         Release.win32\ControlLayer.obj
+         Release.win32\GeoUtils.obj
+         Release.win32\GoogleSatelliteMapStrategy.obj
+         Release.win32\GoogleTerrainMapStrategy.obj
+         Release.win32\GoogleVectorMapStrategy.obj
+         Release.win32\HelloWorldScene.obj
+         Release.win32\MapControl.obj
+         Release.win32\MapStrategy.obj
+         Release.win32\MapStrategyFactory.obj
+         Release.win32\OpenStreetMapStrategy.obj
+         Release.win32\PhysicMap.obj
+         Release.win32\Point.obj
+         Release.win32\PublicMsgHandler.obj
+         Release.win32\RawTile.obj
+         Release.win32\shell.obj
+         Release.win32\sqlite3.obj
+         Release.win32\SqliteLocalStorage.obj
+         Release.win32\SuperMapCloudMapStrategy.obj
+         Release.win32\TiandituMapStrategy.obj
+         Release.win32\TileLoader.obj
+         Release.win32\TileResolver.obj
+         Release.win32\main.obj
+         sunmap.win32.vcxproj -> G:\vscode\cocos2d-2.1beta3-x-2.1.1\Release.win32\sunmap.win32.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"G:\vscode\cocos2d-2.1beta3-x-2.1.1\Release.win32\sunmap.win32.exe;#1" /manifest Release.win32\sunmap.win32.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Release.win32\sunmap.win32.unsuccessfulbuild”。
+         正在对“Release.win32\sunmap.win32.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“G:\vscode\cocos2d-2.1beta3-x-2.1.1\sunmap-master\sunmap\proj.win32\sunmap.win32.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:49.27

@@ -116,9 +116,9 @@ void TileResolver::cthread()
 	pthread_create(&pid, NULL, Fun, (void*)m_pTileLoader);
 }
 
-void TileResolver::put2Cache( RawTile* pTile, CCImage* pTexture )
+bool TileResolver::put2Cache( RawTile* pTile, CCImage* pTexture )
 {
-	m_CacheProvider.putToCache(pTile,pTexture);
+	return m_CacheProvider.putToCache(pTile,pTexture);
 }
 
 void TileResolver::clearQueue()

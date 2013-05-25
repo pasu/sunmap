@@ -64,7 +64,7 @@ void MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
         CCSprite* pNode = (CCSprite*) child;
         if (pNode)
         {
-            CCActionInterval* actionBy = CCMoveBy::create(1, CCPoint(touchLocation.x - m_tBeginPos.x,touchLocation.y - m_tBeginPos.y));
+            CCActionInterval* actionBy = CCMoveBy::create(0.1, CCPoint(touchLocation.x - m_tBeginPos.x,touchLocation.y - m_tBeginPos.y));
 
             
             pNode->runAction(actionBy);
@@ -153,7 +153,7 @@ void MapControl::updateScreen()
 					pTexture->release();
 					pSprite->release();
 
-					//m_Map.setBitmap((Cell_Data*)NULL,i - 2, j - 2);
+					//m_Map.setBitmap((CCImage*)NULL,i - 2, j - 2);
 				}
 			}
 // 			else {
