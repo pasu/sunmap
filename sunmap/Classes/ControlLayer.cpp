@@ -1,8 +1,9 @@
 #include "ControlLayer.h"
 
 
-ControlLayer::ControlLayer( MapControl* pControl )
+ControlLayer::ControlLayer( LayerSwitcher* pLayerSwitcher,MapControl* pControl )
 {
+	m_pLayerSwitcher = pLayerSwitcher;
 	m_pControl = pControl;
 
 	do 
@@ -55,6 +56,25 @@ ControlLayer::ControlLayer( MapControl* pControl )
 		CC_BREAK_IF(! pMenu2);
 
 		this->addChild(pMenu2,2);
+
+		// Create a "close" menu item with close icon, it's an auto release object.
+		CCMenuItemImage *pLayerSwitch = CCMenuItemImage::create(
+			"r_overlays.png",
+			"r_overlays.png",
+			this,
+			menu_selector(ControlLayer::layerswitch));
+		CC_BREAK_IF(! pLayerSwitch);
+
+		// Place the menu item bottom-right conner.
+		pLayerSwitch->setPosition(ccp(CCDirector::sharedDirector()->getWinSize().width/2, CCDirector::sharedDirector()->getWinSize().height-25));
+
+		// Create a menu with the "close" menu item, it's an auto release object.
+		CCMenu* pMenu3 = CCMenu::create(pLayerSwitch, NULL);
+		pMenu3->setPosition(CCPointZero);
+		CC_BREAK_IF(! pMenu3);
+
+		// Add the menu to HelloWorld layer as a child layer.
+		this->addChild(pMenu3, 3);
 	} while (0);
 }
 
@@ -66,4 +86,9 @@ void ControlLayer::zoomIn(CCObject* pSender)
 void ControlLayer::zoomOut(CCObject* pSender)
 {
 	m_pControl->zoomOut();
+}
+
+void ControlLayer::layerswitch( CCObject* pSender )
+{
+	m_pLayerSwitcher->setZOrder(100);
 }

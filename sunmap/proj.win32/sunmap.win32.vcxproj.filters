@@ -118,6 +118,12 @@
     <ClInclude Include="..\Classes\ControlLayer.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\LayerSwitcher.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VisibleRect.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -199,6 +205,12 @@
       <Filter>resource</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\ControlLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LayerSwitcher.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VisibleRect.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

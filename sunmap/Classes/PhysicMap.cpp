@@ -82,7 +82,7 @@ void PhysicMap::loadCells( RawTile tile )
 {
 	int t =0;
 	m_pTileResolver->resetLoaded();
-	//m_pTileResolver->clearQueue();
+	m_pTileResolver->clearQueue();
     
 	for (int i = 0; i < m_nTotalCellsX; i++) {
 		for (int j = 0; j < m_nTotalCellsY; j++) {
@@ -337,12 +337,17 @@ void PhysicMap::zoom( int x, int y, int z )
     
     m_pTileResolver->clearCache();
 	memset((void*)&m_Cells[0], NULL, m_nTotalCells);
-    
+  
 	reload(x, y, z);
 }
 
 TileResolver* PhysicMap::getTileResolver()
 {
 	return m_pTileResolver;
+}
+
+void PhysicMap::reloadTiles()
+{
+	loadCells(m_defTile);
 }
 

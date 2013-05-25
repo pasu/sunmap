@@ -41,6 +41,8 @@ public:
 	void zoom(int x, int y, int z);
 
 	TileResolver* getTileResolver();
+
+	void reloadTiles();
 private:
 	void reload(int x, int y, int z);
 	void loadCells(RawTile tile);

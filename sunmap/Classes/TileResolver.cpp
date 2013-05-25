@@ -131,6 +131,10 @@ void TileResolver::setMapSourceId(int sourceId)
 	m_nStrategyId = sourceId;
 	MapStrategy* pS = MapStrategyFactory::getStrategy(sourceId);
 	m_pTileLoader->setMapStrategy(pS);
+	clearCache(true);
+	clearQueue();
+	//((PhysicMap*)m_pPhysicMap)->releaseCells();
+	((PhysicMap*)m_pPhysicMap)->reloadTiles();
 }
 
 void TileResolver::clearCache(bool bForce )

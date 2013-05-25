@@ -9,6 +9,7 @@ MapControl::MapControl(): m_tBeginPos(CCPointZero)
 	m_Map.initPhysicMap(size.width,size.height,rawTile,(void*)this);
 
 	m_bIsNew = true;	
+	m_firstEnd.tv_sec = m_firstEnd.tv_usec = 0;
 	autorelease();
 }
 
@@ -19,6 +20,7 @@ MapControl::MapControl( const RawTile& tile ): m_tBeginPos(CCPointZero)
 	m_bIsNew = true;
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	m_Map.initPhysicMap(size.width,size.height,tile,(void*)this);
+	m_firstEnd.tv_sec = m_firstEnd.tv_usec = 0;
 }
 
 MapControl::~MapControl()
@@ -35,6 +37,12 @@ void MapControl::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 	m_tBeginPos = touch->getLocation();    
 	
 	CCTime::gettimeofdayCocos2d(&m_now, NULL);
+	if(m_now.tv_sec*1000+ m_now.tv_usec/1000 - m_firstEnd.tv_sec*1000 - m_firstEnd.tv_usec/1000<200)
+	{
+		zoomOut();
+	}
+	m_firstEnd.tv_sec = m_now.tv_sec;
+	m_firstEnd.tv_usec = m_now.tv_usec;
 }
 
 void MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
@@ -182,11 +190,13 @@ void MapControl::updateScreen()
 
 void MapControl::zoomOut()
 {
+	//this->setScale(2);
 	m_Map.zoomS(2);
 }
 
 void MapControl::zoomIn()
 {
+	//this->setScale(0.5);
 	m_Map.zoomS(0.5);
 }
 
