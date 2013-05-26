@@ -91,4 +91,5 @@ void ControlLayer::zoomOut(CCObject* pSender)
 void ControlLayer::layerswitch( CCObject* pSender )
 {
 	m_pLayerSwitcher->setZOrder(100);
+	setTouchEnabled(true);
 }
