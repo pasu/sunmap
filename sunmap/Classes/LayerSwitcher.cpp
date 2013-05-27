@@ -48,7 +48,7 @@ LayerSwitcher::LayerSwitcher( CCScene* pScene,MapControl* pControl ): m_tBeginPo
 	m_pItemMenu->setPosition(s_tCurPos);
 	addChild(m_pItemMenu);
 
-	setTouchEnabled(true);
+	setVisible(false);
 }
 
 LayerSwitcher::~LayerSwitcher()
@@ -65,6 +65,7 @@ void LayerSwitcher::menuCallback( CCObject * pSender )
 		m_pControl->getMap()->getTileResolver()->setMapSourceId(nIdx-1);
 
 		setZOrder(-100);
+        setVisible(false);
 	}
 }
 

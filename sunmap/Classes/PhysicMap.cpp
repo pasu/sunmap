@@ -283,7 +283,7 @@ void PhysicMap::zoomS( double dz )
 	int offsetY = getHeight() / 2;
 	int zoomTo = GeoUtils::getZoomLevel(dz);
 	if (dz > 1) {
-        if(m_nZoom - zoomTo<8)
+        if(m_nZoom - zoomTo<-5)
             return;
 		int currentZoomX = (int) (m_defTile.x * GeoUtils::TILE_SIZE
 			- m_pntGlobalOffset.x + offsetX);

@@ -225,7 +225,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/PhysicMap.cpp"
-         timestampString = "391325913.012216"
+         timestampString = "391332395.213845"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "286"
@@ -309,6 +309,19 @@
          startingLineNumber = "111"
          endingLineNumber = "111"
          landmarkName = "PhysicMap::loadCells( RawTile tile )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/PhysicMap.cpp"
+         timestampString = "391332395.213845"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "311"
+         endingLineNumber = "311"
+         landmarkName = "PhysicMap::zoomS( double dz )"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
