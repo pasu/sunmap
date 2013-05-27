@@ -243,6 +243,11 @@
 		FE0C660D174CCB3300F9F655 /* TileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65F4174CCB3300F9F655 /* TileLoader.cpp */; };
 		FE0C660E174CCB3300F9F655 /* TileResolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE0C65F6174CCB3300F9F655 /* TileResolver.cpp */; };
 		FE5254BC174DC6060079431E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5254BB174DC6060079431E /* Default-568h@2x.png */; };
+		FE62D7C51752F3C10043B2A3 /* ControlLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE62D7BF1752F3C10043B2A3 /* ControlLayer.cpp */; };
+		FE62D7C61752F3C10043B2A3 /* LayerSwitcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE62D7C11752F3C10043B2A3 /* LayerSwitcher.cpp */; };
+		FE62D7C71752F3C10043B2A3 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE62D7C31752F3C10043B2A3 /* VisibleRect.cpp */; };
+		FE62D7CA1752F46C0043B2A3 /* combox.png in Resources */ = {isa = PBXBuildFile; fileRef = FE62D7C81752F46C0043B2A3 /* combox.png */; };
+		FE62D7CB1752F46C0043B2A3 /* r_overlays.png in Resources */ = {isa = PBXBuildFile; fileRef = FE62D7C91752F46C0043B2A3 /* r_overlays.png */; };
 		FE93EF62174CCF1100CC7274 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FE93EF5F174CCF1100CC7274 /* bg.png */; };
 		FE93EF63174CCF1100CC7274 /* zoomin.png in Resources */ = {isa = PBXBuildFile; fileRef = FE93EF60174CCF1100CC7274 /* zoomin.png */; };
 		FE93EF64174CCF1100CC7274 /* zoomout.png in Resources */ = {isa = PBXBuildFile; fileRef = FE93EF61174CCF1100CC7274 /* zoomout.png */; };
@@ -762,6 +767,14 @@
 		FE0C65F6174CCB3300F9F655 /* TileResolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TileResolver.cpp; path = Classes/TileResolver.cpp; sourceTree = "<group>"; };
 		FE0C65F7174CCB3300F9F655 /* TileResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TileResolver.h; path = Classes/TileResolver.h; sourceTree = "<group>"; };
 		FE5254BB174DC6060079431E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FE62D7BF1752F3C10043B2A3 /* ControlLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ControlLayer.cpp; path = Classes/ControlLayer.cpp; sourceTree = "<group>"; };
+		FE62D7C01752F3C10043B2A3 /* ControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlLayer.h; path = Classes/ControlLayer.h; sourceTree = "<group>"; };
+		FE62D7C11752F3C10043B2A3 /* LayerSwitcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LayerSwitcher.cpp; path = Classes/LayerSwitcher.cpp; sourceTree = "<group>"; };
+		FE62D7C21752F3C10043B2A3 /* LayerSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayerSwitcher.h; path = Classes/LayerSwitcher.h; sourceTree = "<group>"; };
+		FE62D7C31752F3C10043B2A3 /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = Classes/VisibleRect.cpp; sourceTree = "<group>"; };
+		FE62D7C41752F3C10043B2A3 /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = Classes/VisibleRect.h; sourceTree = "<group>"; };
+		FE62D7C81752F46C0043B2A3 /* combox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = combox.png; path = Resources/combox.png; sourceTree = "<group>"; };
+		FE62D7C91752F46C0043B2A3 /* r_overlays.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = r_overlays.png; path = Resources/r_overlays.png; sourceTree = "<group>"; };
 		FE93EF5F174CCF1100CC7274 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Resources/bg.png; sourceTree = "<group>"; };
 		FE93EF60174CCF1100CC7274 /* zoomin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoomin.png; path = Resources/zoomin.png; sourceTree = "<group>"; };
 		FE93EF61174CCF1100CC7274 /* zoomout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoomout.png; path = Resources/zoomout.png; sourceTree = "<group>"; };
@@ -836,6 +849,8 @@
 		FE0C62F1174CCAFE00F9F655 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FE62D7C81752F46C0043B2A3 /* combox.png */,
+				FE62D7C91752F46C0043B2A3 /* r_overlays.png */,
 				FE93EF5F174CCF1100CC7274 /* bg.png */,
 				FE93EF60174CCF1100CC7274 /* zoomin.png */,
 				FE93EF61174CCF1100CC7274 /* zoomout.png */,
@@ -1769,6 +1784,12 @@
 		FE0C65BE174CCB0300F9F655 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FE62D7BF1752F3C10043B2A3 /* ControlLayer.cpp */,
+				FE62D7C01752F3C10043B2A3 /* ControlLayer.h */,
+				FE62D7C11752F3C10043B2A3 /* LayerSwitcher.cpp */,
+				FE62D7C21752F3C10043B2A3 /* LayerSwitcher.h */,
+				FE62D7C31752F3C10043B2A3 /* VisibleRect.cpp */,
+				FE62D7C41752F3C10043B2A3 /* VisibleRect.h */,
 				FE0C65CA174CCB3300F9F655 /* AMapStrategy.cpp */,
 				FE0C65CB174CCB3300F9F655 /* AMapStrategy.h */,
 				FE0C65CC174CCB3300F9F655 /* ArcGisMapStrategy.cpp */,
@@ -1891,6 +1912,8 @@
 				FE93EF63174CCF1100CC7274 /* zoomin.png in Resources */,
 				FE93EF64174CCF1100CC7274 /* zoomout.png in Resources */,
 				FE5254BC174DC6060079431E /* Default-568h@2x.png in Resources */,
+				FE62D7CA1752F46C0043B2A3 /* combox.png in Resources */,
+				FE62D7CB1752F46C0043B2A3 /* r_overlays.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2111,6 +2134,9 @@
 				FE0C660C174CCB3300F9F655 /* TiandituMapStrategy.cpp in Sources */,
 				FE0C660D174CCB3300F9F655 /* TileLoader.cpp in Sources */,
 				FE0C660E174CCB3300F9F655 /* TileResolver.cpp in Sources */,
+				FE62D7C51752F3C10043B2A3 /* ControlLayer.cpp in Sources */,
+				FE62D7C61752F3C10043B2A3 /* LayerSwitcher.cpp in Sources */,
+				FE62D7C71752F3C10043B2A3 /* VisibleRect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

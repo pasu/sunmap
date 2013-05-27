@@ -78,6 +78,11 @@ void PhysicMap::reload( int x, int y, int z )
 	loadCells(m_defTile);
 }
 
+CCImage* PhysicMap::getBgImage()
+{
+    return m_pBg;
+}
+
 void PhysicMap::loadCells( RawTile tile )
 {
 	int t =0;
@@ -102,6 +107,8 @@ void PhysicMap::loadCells( RawTile tile )
 			}
 		}
 	}
+    
+    ((MapControl*)(m_pMapControl))->updateScreen();
 }
 
 void PhysicMap::initPhysicMap( int width, int height, RawTile defTile,void* pMapControl )
@@ -220,7 +227,7 @@ void PhysicMap::setGlobalOffset( cocos2d::CCPoint pnt )
 	m_pntGlobalOffset = pnt;
 }
 
-void PhysicMap::quickHack(bool bForce)
+bool PhysicMap::quickHack(bool bForce)
 {
 	int dx = 0, dy = 0;
 	int tdx = 0, tdy = 0;
@@ -250,7 +257,9 @@ void PhysicMap::quickHack(bool bForce)
 
 	if (!(tdx == 0 && tdy == 0) || bForce==true) {
 		move(tdx, tdy);
+        return  true;
 	}
+    return  false;
 }
 
 void PhysicMap::move( int dx, int dy )

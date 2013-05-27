@@ -41,7 +41,8 @@ private:
 	bool m_bIsNew;
 	CCPoint m_tBeginPos;
 	cc_timeval m_now; 
-	cc_timeval m_firstEnd; 
+	cc_timeval m_firstEnd;
+    CCSprite* m_pSprite;
 };
 
 #endif

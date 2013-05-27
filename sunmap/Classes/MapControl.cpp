@@ -6,11 +6,29 @@ MapControl::MapControl(): m_tBeginPos(CCPointZero)
 	setTouchEnabled(true);
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	RawTile rawTile;
+    m_pSprite = NULL;
 	m_Map.initPhysicMap(size.width,size.height,rawTile,(void*)this);
 
 	m_bIsNew = true;	
 	m_firstEnd.tv_sec = m_firstEnd.tv_usec = 0;
 	autorelease();
+    
+    CCImage* pImage = m_Map.getBgImage();
+    CCTexture2D* pTexture = new CCTexture2D();
+    pTexture->initWithImage(pImage);
+    
+    
+    m_pSprite = CCSprite::createWithTexture(pTexture);
+    m_pSprite->setPosition(ccp(size.width/2, size.height/2));
+    float winw = size.width; //获取屏幕宽度
+    float winh = size.height;//获取屏幕高度
+    
+    float spx = m_pSprite->getTextureRect().getMaxX();
+    float spy = m_pSprite->getTextureRect().getMaxY();
+    
+    m_pSprite->setScaleX(winw/spx); //设置精灵宽度缩放比例
+    m_pSprite->setScaleY(winh/spy);
+    m_pSprite->retain();
 }
 
 
@@ -19,8 +37,26 @@ MapControl::MapControl( const RawTile& tile ): m_tBeginPos(CCPointZero)
 	setTouchEnabled(true);
 	m_bIsNew = true;
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
+    m_pSprite = NULL;
 	m_Map.initPhysicMap(size.width,size.height,tile,(void*)this);
 	m_firstEnd.tv_sec = m_firstEnd.tv_usec = 0;
+    
+    CCImage* pImage = m_Map.getBgImage();
+    CCTexture2D* pTexture = new CCTexture2D();
+    pTexture->initWithImage(pImage);
+    
+    
+    m_pSprite = CCSprite::createWithTexture(pTexture);
+    m_pSprite->setPosition(ccp(size.width/2, size.height/2));
+    float winw = size.width; //获取屏幕宽度
+    float winh = size.height;//获取屏幕高度
+    
+    float spx = m_pSprite->getTextureRect().getMaxX();
+    float spy = m_pSprite->getTextureRect().getMaxY();
+    
+    m_pSprite->setScaleX(winw/spx); //设置精灵宽度缩放比例
+    m_pSprite->setScaleY(winh/spy);
+    m_pSprite->retain();
 }
 
 MapControl::~MapControl()
@@ -70,7 +106,7 @@ void MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
     CCARRAY_FOREACH(getChildren(), child)
     {
         CCSprite* pNode = (CCSprite*) child;
-        if (pNode)
+        if (pNode && pNode->getTag() != 0)
         {
             CCActionInterval* actionBy = CCMoveBy::create(0.1, CCPoint(touchLocation.x - m_tBeginPos.x,touchLocation.y - m_tBeginPos.y));
 
@@ -82,7 +118,7 @@ void MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
     
     m_tBeginPos = touchLocation;
     
-	if ((m_now2.tv_sec> m_now.tv_sec || m_now2.tv_usec - m_now.tv_usec>100000 ))
+	if ((m_now2.tv_sec> m_now.tv_sec ))
 	{
 		m_Map.m_bInMove = false;
 		CCSetIterator it = pTouches->begin();
@@ -139,6 +175,11 @@ void MapControl::goTo( int x, int y, int z, int offsetX, int offsetY )
 void MapControl::updateScreen()
 {
 	this->removeAllChildrenWithCleanup(true);
+    if(m_pSprite !=  NULL)
+    {
+        addChild(m_pSprite,0,0);
+    }
+    
 
 	for (int i = 2; i < m_Map.m_nTotalCellsX+2; i++) {
 		for (int j = 2; j < m_Map.m_nTotalCellsY+2; j++) {
@@ -156,7 +197,7 @@ void MapControl::updateScreen()
 					CCPoint point((i - 2) * GeoUtils::TILE_SIZE + m_Map.getGlobalOffset().x+ GeoUtils::TILE_SIZE/2,m_Map.getHeight()-((j - 2) * GeoUtils::TILE_SIZE + m_Map.getGlobalOffset().y+ GeoUtils::TILE_SIZE/2));
 					pSprite->setPosition(point);
 					//pSprite->autorelease();
-					addChild(pSprite);
+					addChild(pSprite,1,i+j);
 
 					pTexture->release();
 					pSprite->release();

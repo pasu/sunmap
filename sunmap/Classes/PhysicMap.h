@@ -33,7 +33,7 @@ public:
 
 	void updateMap();
 
-	 void quickHack(bool bForce = false);
+	 bool quickHack(bool bForce = false);
 	void move(int dx, int dy);
 	void setBitmap(CCImage* cell, int x, int y);
 	void zoomS(double dz);
@@ -43,6 +43,7 @@ public:
 	TileResolver* getTileResolver();
 
 	void reloadTiles();
+    CCImage* getBgImage();
 private:
 	void reload(int x, int y, int z);
 	void loadCells(RawTile tile);
