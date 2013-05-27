@@ -37,7 +37,7 @@ ControlLayer::ControlLayer( LayerSwitcher* pLayerSwitcher,MapControl* pControl )
 		CC_BREAK_IF(! pMenu);
 
 		// Add the menu to HelloWorld layer as a child layer.
-		this->addChild(pMenu, 1);
+		this->addChild(pMenu, 1,1);
 
 		// Create a "close" menu item with close icon, it's an auto release object.
 		CCMenuItemImage *pZoomOut = CCMenuItemImage::create(
@@ -55,7 +55,7 @@ ControlLayer::ControlLayer( LayerSwitcher* pLayerSwitcher,MapControl* pControl )
 		pMenu2->setPosition(CCPointZero);
 		CC_BREAK_IF(! pMenu2);
 
-		this->addChild(pMenu2,2);
+		this->addChild(pMenu2,2,2);
 
 		// Create a "close" menu item with close icon, it's an auto release object.
 		CCMenuItemImage *pLayerSwitch = CCMenuItemImage::create(
@@ -74,18 +74,50 @@ ControlLayer::ControlLayer( LayerSwitcher* pLayerSwitcher,MapControl* pControl )
 		CC_BREAK_IF(! pMenu3);
 
 		// Add the menu to HelloWorld layer as a child layer.
-		this->addChild(pMenu3, 3);
+		this->addChild(pMenu3, 3,3);
+
+		m_ScaleList.reserve(19);
+		for (int i=0;i<19;++i)
+		{
+			CCString str;
+			str.initWithFormat("scale%d.png",i+1);
+			CCMenuItemImage *pScaleItem = CCMenuItemImage::create(str.getCString(),str.getCString());
+			CC_BREAK_IF(! pScaleItem);
+
+			// Place the menu item bottom-right conner.
+			pScaleItem->setPosition(ccp(100, 35));
+
+			// Create a menu with the "close" menu item, it's an auto release object.
+			CCMenu* pScaleMenu = CCMenu::create(pScaleItem, NULL);
+			pScaleMenu->setPosition(CCPointZero);
+			pScaleMenu->retain();
+			m_ScaleList.push_back(pScaleMenu);
+		}
+
+		int zoom = pControl->getZoomLevel();
+
+		addChild(m_ScaleList[zoom-1],4,4);
 	} while (0);
 }
 
 void ControlLayer::zoomIn(CCObject* pSender)
 {
 	m_pControl->zoomIn();
+
+	removeChildByTag(4);
+
+	int zoom = m_pControl->getZoomLevel();
+	addChild(m_ScaleList[zoom-1],4,4);
 }
 
 void ControlLayer::zoomOut(CCObject* pSender)
 {
 	m_pControl->zoomOut();
+
+	removeChildByTag(4);
+
+	int zoom = m_pControl->getZoomLevel();
+	addChild(m_ScaleList[zoom-1],4,4);
 }
 
 void ControlLayer::layerswitch( CCObject* pSender )

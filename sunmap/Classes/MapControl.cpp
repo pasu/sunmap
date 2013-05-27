@@ -245,3 +245,8 @@ PhysicMap* MapControl::getMap()
 {
 	return &m_Map;
 }
+
+int MapControl::getZoomLevel()
+{
+	return m_Map.getZoomLevel();
+}

@@ -30,6 +30,8 @@ public:
 
 	PhysicMap* getMap();
 
+	int getZoomLevel();
+
 public:
 	enum CELL_Type
 	{

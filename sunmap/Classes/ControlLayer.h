@@ -19,6 +19,7 @@ public:
 private:
 	LayerSwitcher* m_pLayerSwitcher;
 	MapControl* m_pControl;
+	std::vector<CCMenu*> m_ScaleList;
 };
 
 #endif
