@@ -1,5 +1,6 @@
 #include "MapControl.h"
 #include "GeoUtils.h"
+#include "ControlLayer.h"
 
 MapControl::MapControl(): m_tBeginPos(CCPointZero)
 {
@@ -29,6 +30,12 @@ MapControl::MapControl(): m_tBeginPos(CCPointZero)
     m_pSprite->setScaleX(winw/spx); //设置精灵宽度缩放比例
     m_pSprite->setScaleY(winh/spy);
     m_pSprite->retain();
+    m_pControlLayer = NULL;
+    m_bMutiTouch = false;
+    m_fMutiDistance = 0.0;
+    m_offsetX = m_offsetY = 0.0;
+    m_nTouches = 0;
+    m_dScale = 1.0;
 }
 
 
@@ -57,6 +64,13 @@ MapControl::MapControl( const RawTile& tile ): m_tBeginPos(CCPointZero)
     m_pSprite->setScaleX(winw/spx); //设置精灵宽度缩放比例
     m_pSprite->setScaleY(winh/spy);
     m_pSprite->retain();
+    
+    m_pControlLayer = NULL;
+    m_bMutiTouch = false;
+    m_fMutiDistance = 0.0;
+    m_offsetX = m_offsetY = 0.0;
+    m_nTouches = 0;
+    m_dScale = 1.0;
 }
 
 MapControl::~MapControl()
@@ -64,82 +78,257 @@ MapControl::~MapControl()
 
 }
 
+void MapControl::attachControlLayer(void* pControlLayer)
+{
+    m_pControlLayer = pControlLayer;
+}
+
 void MapControl::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 {
+    m_nTouches += pTouches->count();
+    if(pTouches->count()>1)
+        return;
 	m_Map.m_bInMove = false;
-	CCSetIterator it = pTouches->begin();
-	CCTouch* touch = (CCTouch*)(*it);
+    
+    if(m_nTouches == 1)
+    {
+        CCSetIterator it = pTouches->begin();
+        CCTouch* touch = (CCTouch*)(*it);
 
-	m_tBeginPos = touch->getLocation();    
+        m_tBeginPos = touch->getLocation();
 	
-	CCTime::gettimeofdayCocos2d(&m_now, NULL);
-	if(m_now.tv_sec*1000+ m_now.tv_usec/1000 - m_firstEnd.tv_sec*1000 - m_firstEnd.tv_usec/1000<200)
-	{
-		zoomOut();
-	}
-	m_firstEnd.tv_sec = m_now.tv_sec;
-	m_firstEnd.tv_usec = m_now.tv_usec;
+        CCTime::gettimeofdayCocos2d(&m_now, NULL);
+        if (m_firstEnd.tv_sec != 0)
+        {
+            long nTime = (m_now.tv_sec - m_firstEnd.tv_sec)*1000 + (m_now.tv_usec-m_firstEnd.tv_usec)/1000;
+            if(nTime>100 && nTime<250)
+            {
+                zoomOut();
+                if(m_pControlLayer)
+                {
+                    ((ControlLayer*)m_pControlLayer)->updateScale();
+                }
+            }
+        }
+	
+        m_firstEnd.tv_sec = m_now.tv_sec;
+        m_firstEnd.tv_usec = m_now.tv_usec;
+    }
 }
 
 void MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
 {
-	cc_timeval m_now2; 
-	CCTime::gettimeofdayCocos2d(&m_now2, NULL);
-
-    m_Map.m_bInMove = true;
-    CCSetIterator it = pTouches->begin();
-    CCTouch* touch = (CCTouch*)(*it);
-    
-    CCPoint touchLocation = touch->getLocation();
-    
-    float nMoveX = m_Map.getGlobalOffset().x + touchLocation.x - m_tBeginPos.x;
-    float nMoveY = m_Map.getGlobalOffset().y - (touchLocation.y - m_tBeginPos.y);
-    
-    
-    m_Map.setGlobalOffset(CCPoint(nMoveX,nMoveY));
-    //updateScreen();
-    //return;
-    
-    
-    CCObject* child;
-                                                      
-    CCARRAY_FOREACH(getChildren(), child)
+    if(pTouches->count() == 1 && m_bMutiTouch==false)
     {
-        CCSprite* pNode = (CCSprite*) child;
-        if (pNode && pNode->getTag() != 0)
+        cc_timeval m_now2;
+        CCTime::gettimeofdayCocos2d(&m_now2, NULL);
+        
+        m_Map.m_bInMove = true;
+        CCSetIterator it = pTouches->begin();
+        CCTouch* touch = (CCTouch*)(*it);
+        
+        CCPoint touchLocation = touch->getLocation();
+        
+        float nMoveX = m_Map.getGlobalOffset().x + touchLocation.x - m_tBeginPos.x;
+        float nMoveY = m_Map.getGlobalOffset().y - (touchLocation.y - m_tBeginPos.y);
+        
+        
+        m_Map.setGlobalOffset(CCPoint(nMoveX,nMoveY));
+        //updateScreen();
+        //return;
+        
+        if(m_tBeginPos.equals(touchLocation) == false)
         {
-            CCActionInterval* actionBy = CCMoveBy::create(0.1, CCPoint(touchLocation.x - m_tBeginPos.x,touchLocation.y - m_tBeginPos.y));
-
+            CCObject* child;
             
-            pNode->runAction(actionBy);
+            CCARRAY_FOREACH(getChildren(), child)
+            {
+                CCSprite* pNode = (CCSprite*) child;
+                if (pNode && pNode->getTag() != 0)
+                {
+                    CCActionInterval* actionBy = CCMoveBy::create(0.1, CCPoint(touchLocation.x - m_tBeginPos.x,touchLocation.y - m_tBeginPos.y));
+                    
+                    
+                    pNode->runAction(actionBy);
+                }
+            }
+            
+            
+            m_tBeginPos = touchLocation;
+        }
+        
+        if ((m_now2.tv_sec> m_now.tv_sec ))
+        {
+            m_Map.m_bInMove = false;
+            CCSetIterator it = pTouches->begin();
+            CCTouch* touch = (CCTouch*)(*it);
+            
+            CCPoint touchLocation = touch->getLocation();
+            
+            float nMoveX = m_Map.getGlobalOffset().x + touchLocation.x - m_tBeginPos.x;
+            float nMoveY = m_Map.getGlobalOffset().y - (touchLocation.y - m_tBeginPos.y);
+            
+            m_Map.setGlobalOffset(CCPoint(nMoveX,nMoveY));
+            m_Map.quickHack();
+            updateScreen();
+            m_tBeginPos = touchLocation;
+            
+            m_now.tv_usec = m_now2.tv_usec;
         }
     }
-     
-    
-    m_tBeginPos = touchLocation;
-    
-	if ((m_now2.tv_sec> m_now.tv_sec ))
-	{
-		m_Map.m_bInMove = false;
-		CCSetIterator it = pTouches->begin();
-		CCTouch* touch = (CCTouch*)(*it);
+    else if(pTouches->count() == 2)
+    {
         
-		CCPoint touchLocation = touch->getLocation();
+        CCTouch *pCurTouch1;
+        CCTouch *pCurTouch2;
+        int i = 0;
+        for( CCSetIterator iterTouch = pTouches->begin(); iterTouch != pTouches->end(); iterTouch++ )
+        {
+            if( i == 0 )
+            {
+                pCurTouch1 = (CCTouch*)*iterTouch;
+            }else if( i == 1 )
+            {
+                pCurTouch2 = ( CCTouch* )*iterTouch;
+                break;
+            }
+            i++;
+        }
         
-		float nMoveX = m_Map.getGlobalOffset().x + touchLocation.x - m_tBeginPos.x;
-		float nMoveY = m_Map.getGlobalOffset().y - (touchLocation.y - m_tBeginPos.y);
+        float lastDistance = ccpDistance( pCurTouch1->getLocation(), pCurTouch2->getLocation() );
+        if(fabs(m_fMutiDistance-0)<0.1)
+        {
+            m_fMutiDistance = lastDistance;	
+        }
         
-		m_Map.setGlobalOffset(CCPoint(nMoveX,nMoveY));
-		m_Map.quickHack();
-		updateScreen();
-		m_tBeginPos = touchLocation;
+        if(m_bMutiTouch == false)
+        {
+            m_fMutiDistance = lastDistance;
+            m_bMutiTouch = true;
+            
+            CCObject* child;
+            
+            CCARRAY_FOREACH(getChildren(), child)
+            {
+                CCSprite* pNode = (CCSprite*) child;
+                if (pNode && pNode->getTag() != 0)
+                {
+                    m_spritePnt.push_back(pNode->getPosition());
+                    
+                }
+            }
+            CCTime::gettimeofdayCocos2d(&m_lastTouchTime, NULL);
+        }
+        else
+        {
+            cc_timeval m_nowTouchTime;
+            CCTime::gettimeofdayCocos2d(&m_nowTouchTime, NULL);
+            
+            if(m_nowTouchTime.tv_sec == m_lastTouchTime.tv_sec && m_nowTouchTime.tv_usec-m_lastTouchTime.tv_usec<20000)
+                return;
+            
+            m_lastTouchTime = m_nowTouchTime;
+            float offsetX,offsetY;
+            if( lastDistance - m_fMutiDistance > 0 )
+            {
+                m_dScale += 0.1;// (m_dScale * sqrt(lastDistance/m_fMutiDistance) );
+                if(m_dScale>2)
+                    m_dScale = 2;
+            }
+            else
+            {
+                
+                m_dScale -= 0.1;// (m_dScale * sqrt(lastDistance/m_fMutiDistance) );
+                if(m_dScale<0.5)
+                    m_dScale = 0.5;
+            }
+            
+                        
+            //m_dScale = (m_dScale * lastDistance/m_fMutiDistance );
+            
+            CCPoint pntOrg(m_Map.getWidth()/2,m_Map.getHeight()/2);
+            int nIndex = 0;
+            if(fabs(m_dScale-1)>0.1)
+            {
+                
+                CCObject* child;
+                
+                CCARRAY_FOREACH(getChildren(), child)
+                {
+                    CCSprite* pNode = (CCSprite*) child;
+                    if (pNode && pNode->getTag() != 0)
+                    {
+                        CCPoint pntNow = pNode->getPosition();
+                        CCPoint pnt = m_spritePnt[nIndex++];
+                        offsetX = pntOrg.x + (pnt.x - pntOrg.x)*m_dScale;
+                        offsetY = pntOrg.y + (pnt.y - pntOrg.y)*m_dScale;
+                        
+                        CCActionInterval* actionBy = CCMoveBy::create(0.00001, CCPoint(offsetX - pntNow.x,offsetY-pntNow.y));
+                        CCActionInterval* ScaleTo = CCScaleBy::create(0.00001, m_dScale/pNode->getScale());
+
+                        pNode->runAction(CCSpawn::create( ScaleTo,actionBy , NULL));
+                    }
+                }
+            }
+        }
         
-		m_now.tv_usec = m_now2.tv_usec;
-	}
+        
+    }
 }
 
 void MapControl::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
 {
+    m_nTouches -= pTouches->count();
+    if (m_bMutiTouch == true) {
+        if(m_nTouches == 0)
+        {
+            m_Map.m_bInMove = false;
+            
+            m_bMutiTouch = false;
+            
+            if(m_dScale>1.4)
+            {
+                zoomOut();
+                if(m_pControlLayer)
+                {
+                    ((ControlLayer*)m_pControlLayer)->updateScale();
+                }
+                
+            }
+            else if(m_dScale<0.6)
+            {
+                zoomIn();
+                if(m_pControlLayer)
+                {
+                    ((ControlLayer*)m_pControlLayer)->updateScale();
+                }
+                
+            }
+            else
+            {
+                CCObject* child;
+                int nIndex = 0;
+                
+                CCARRAY_FOREACH(getChildren(), child)
+                {
+                    CCSprite* pNode = (CCSprite*) child;
+                    if (pNode && pNode->getTag() != 0)
+                    {                                               
+                        CCActionInterval* actionTo = CCMoveTo::create(0.1, m_spritePnt[nIndex++]);
+                        CCActionInterval* ScaleTo = CCScaleTo::create(0.1, 1);
+                        
+                        pNode->runAction(CCSpawn::create( actionTo, ScaleTo, NULL));
+                    }
+                    
+                }
+            }
+            m_offsetX = m_offsetY = 0.0;
+            m_dScale = 1.0;
+            m_spritePnt.clear();
+        }
+        return;
+    }
+    
 	m_Map.m_bInMove = false;
 	CCSetIterator it = pTouches->begin();
 	CCTouch* touch = (CCTouch*)(*it);
@@ -219,15 +408,6 @@ void MapControl::updateScreen()
 		}
 	}
 }
-
-// void MapControl::update( float delta )
-// {
-// 	if(m_Map.m_update == true)
-// 	{
-// 		m_Map.m_update = false;
-// 		updateScreen();
-// 	}
-// }
 
 void MapControl::zoomOut()
 {

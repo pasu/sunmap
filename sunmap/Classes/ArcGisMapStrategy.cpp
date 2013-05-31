@@ -2,7 +2,7 @@
 
 cocos2d::CCString ArcGisMapStrategy::getUrl( int x, int y, int z )
 {
-	char* pUrl = "http://www.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer/tile/%d/%d/%d";
+	const char* pUrl = "http://www.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer/tile/%d/%d/%d";
 	
 	CCString strUrl;
 	strUrl.initWithFormat(pUrl,17-z,y,x);

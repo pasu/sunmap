@@ -31,6 +31,8 @@ public:
 	PhysicMap* getMap();
 
 	int getZoomLevel();
+    
+    void attachControlLayer(void* pControlLayer);
 
 public:
 	enum CELL_Type
@@ -45,6 +47,17 @@ private:
 	cc_timeval m_now; 
 	cc_timeval m_firstEnd;
     CCSprite* m_pSprite;
+    void* m_pControlLayer;
+    
+    bool m_bMutiTouch;
+    float m_fMutiDistance;
+    CCPoint m_MutiPoint;
+    float m_offsetX;
+    float m_offsetY;
+    int m_nTouches;
+    float m_dScale;
+    cc_timeval m_lastTouchTime;
+    std::vector<CCPoint> m_spritePnt;
 };
 
 #endif

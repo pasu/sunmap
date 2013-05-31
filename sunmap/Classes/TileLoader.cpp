@@ -47,12 +47,11 @@ void* download(void* pCurl)
 		curl_easy_setopt(curl, CURLOPT_URL, strUrl.getCString());
 		curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31");
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, OnWriteData);
-		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 20);
-		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 25);
+		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
+		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30);
 		curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1L);
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&strResponse);
 		curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1L);
-		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 3);
 
 		res = curl_easy_perform(curl);
 
@@ -64,8 +63,26 @@ void* download(void* pCurl)
 		if (res==CURLE_OK && retcode == 200 && ((int)length)>0 && strResponse.size()>0)
 		{
 			CCImage* pImage = new CCImage;
-			pImage->initWithImageData((void*)strResponse.c_str(),(int)length);
-			
+            if(pImage->initWithImageData((void*)strResponse.c_str(),(int)length) == false)
+            {
+                delete pImage;
+                pImage = NULL;
+                
+                curl_easy_cleanup(curl);
+                
+                if(((curl_data*)pCurl)->nTryTime>0)
+                {
+                    pthread_t pid;
+                    pthread_create(&pid, NULL, download, (void*)pCurl);
+                }
+                else
+                {
+                    ((TileResolver*)(pTileResolver))->m_pTileLoader->m_nCount--;
+                    delete (curl_data*)pCurl;
+                    pCurl = NULL;
+                }
+            }
+						
 			if(((TileResolver*)(pTileResolver))->put2Cache(pTile,pImage))
 			{
 				((PhysicMap* )(((TileResolver*)(pTileResolver))->m_pPhysicMap))->m_pHandler->addEvent(pTile,pImage);

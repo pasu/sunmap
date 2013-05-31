@@ -22,8 +22,7 @@ CCImage* BitmapCache::getTile( RawTile* pTile )
 bool BitmapCache::putToCache( RawTile* pTile, CCImage* pData )
 {
 	pthread_mutex_lock(&mutex);
-
-	CCImage* ppData = NULL;
+    
 	std::map<std::string,CCImage*>::iterator l_it;
 
 	l_it=m_DataCache.find(pTile->toString().getCString());

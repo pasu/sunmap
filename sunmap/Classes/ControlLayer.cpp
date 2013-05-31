@@ -103,25 +103,25 @@ ControlLayer::ControlLayer( LayerSwitcher* pLayerSwitcher,MapControl* pControl )
 void ControlLayer::zoomIn(CCObject* pSender)
 {
 	m_pControl->zoomIn();
-
-	removeChildByTag(4);
-
-	int zoom = m_pControl->getZoomLevel();
-	addChild(m_ScaleList[zoom-1],4,4);
+    updateScale();
 }
 
 void ControlLayer::zoomOut(CCObject* pSender)
 {
 	m_pControl->zoomOut();
-
-	removeChildByTag(4);
-
-	int zoom = m_pControl->getZoomLevel();
-	addChild(m_ScaleList[zoom-1],4,4);
+    updateScale();
 }
 
 void ControlLayer::layerswitch( CCObject* pSender )
 {
 	m_pLayerSwitcher->setZOrder(100);
     m_pLayerSwitcher->setVisible(true);
+}
+
+void ControlLayer::updateScale()
+{
+    removeChildByTag(4);
+    
+	int zoom = m_pControl->getZoomLevel();
+	addChild(m_ScaleList[zoom-1],4,4);
 }

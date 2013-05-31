@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/TileLoader.cpp"
-         timestampString = "390993585.13169"
+         timestampString = "391659675.239865"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "71"
-         endingLineNumber = "71"
+         startingLineNumber = "88"
+         endingLineNumber = "88"
          landmarkName = "download(void* pCurl)"
          landmarkType = "7">
       </FileBreakpoint>
@@ -60,86 +60,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/MapControl.cpp"
-         timestampString = "391326066.426207"
+         timestampString = "391683617.543041"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "175"
-         endingLineNumber = "175">
+         startingLineNumber = "274"
+         endingLineNumber = "274"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/MapControl.cpp"
-         timestampString = "391326066.426207"
+         timestampString = "391683097.428596"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174">
+         startingLineNumber = "222"
+         endingLineNumber = "222"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/BitmapCache.cpp"
-         timestampString = "391050476.396119"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "32"
+         endingLineNumber = "32"
+         landmarkName = "BitmapCache::putToCache( RawTile* pTile, CCImage* pData )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/BitmapCache.cpp"
+         timestampString = "391683617.543041"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "33"
          endingLineNumber = "33"
          landmarkName = "BitmapCache::putToCache( RawTile* pTile, CCImage* pData )"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "sunmap/Classes/MapControl.cpp"
-         timestampString = "391326066.426207"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "113"
-         endingLineNumber = "113"
-         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "sunmap/Classes/BitmapCache.cpp"
-         timestampString = "391050539.351827"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
-         landmarkName = "BitmapCache::putToCache( RawTile* pTile, CCImage* pData )"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "sunmap/Classes/MapControl.cpp"
-         timestampString = "391326066.426207"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
-         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "sunmap/Classes/MapControl.cpp"
-         timestampString = "391326066.426207"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
-         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -172,19 +137,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "sunmap/Classes/MapControl.cpp"
-         timestampString = "391326066.426207"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
-         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/PhysicMap.cpp"
          timestampString = "391325913.012216"
          startingColumnNumber = "9223372036854775807"
@@ -192,19 +144,6 @@
          startingLineNumber = "259"
          endingLineNumber = "259"
          landmarkName = "PhysicMap::quickHack(bool bForce)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "sunmap/Classes/MapControl.cpp"
-         timestampString = "391326066.426207"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "136"
-         endingLineNumber = "136"
-         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -264,24 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/MapControl.cpp"
-         timestampString = "391326066.426207"
+         timestampString = "391671556.813213"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "153"
-         endingLineNumber = "153"
-         landmarkName = "MapControl::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "sunmap/Classes/MapControl.cpp"
-         timestampString = "391326066.426207"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
+         startingLineNumber = "186"
+         endingLineNumber = "186"
          landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
@@ -322,6 +248,370 @@
          startingLineNumber = "311"
          endingLineNumber = "311"
          landmarkName = "PhysicMap::zoomS( double dz )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "183"
+         endingLineNumber = "183"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "MapControl::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "283"
+         endingLineNumber = "283"
+         landmarkName = "MapControl::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "286"
+         endingLineNumber = "286"
+         landmarkName = "MapControl::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "281"
+         endingLineNumber = "281"
+         landmarkName = "MapControl::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "207"
+         endingLineNumber = "207"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/TileLoader.cpp"
+         timestampString = "391659675.239865"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "68"
+         endingLineNumber = "68"
+         landmarkName = "download(void* pCurl)"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/TileLoader.cpp"
+         timestampString = "391659675.239865"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
+         landmarkName = "download(void* pCurl)"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/TileLoader.cpp"
+         timestampString = "391659675.239865"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "61"
+         endingLineNumber = "61"
+         landmarkName = "download(void* pCurl)"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "300"
+         endingLineNumber = "300"
+         landmarkName = "MapControl::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "289"
+         endingLineNumber = "289"
+         landmarkName = "MapControl::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "291"
+         endingLineNumber = "291"
+         landmarkName = "MapControl::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "366"
+         endingLineNumber = "366"
+         landmarkName = "MapControl::updateScreen()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "88"
+         endingLineNumber = "88"
+         landmarkName = "MapControl::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391671556.813213"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "120"
+         endingLineNumber = "120"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/ControlLayer.cpp"
+         timestampString = "391661937.317993"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
+         landmarkName = "ControlLayer::zoomOut(CCObject* pSender)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "415"
+         endingLineNumber = "415"
+         landmarkName = "MapControl::zoomOut()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "421"
+         endingLineNumber = "421"
+         landmarkName = "MapControl::zoomIn()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/libs/cocos2dx/base_nodes/CCNode.cpp"
+         timestampString = "391673518.11317"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "243"
+         endingLineNumber = "243"
+         landmarkName = "CCNode::getScale(void)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/libs/cocos2dx/base_nodes/CCNode.cpp"
+         timestampString = "391674669.085587"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1147"
+         endingLineNumber = "1147"
+         landmarkName = "CCNode::nodeToParentTransform(void)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "262"
+         endingLineNumber = "262"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "253"
+         endingLineNumber = "253"
+         landmarkName = "MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/MapControl.cpp"
+         timestampString = "391683617.543041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "309"
+         endingLineNumber = "309"
+         landmarkName = "MapControl::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

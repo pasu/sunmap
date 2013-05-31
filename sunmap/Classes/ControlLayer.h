@@ -16,6 +16,7 @@ public:
 	void zoomIn(CCObject* pSender);
 	void zoomOut(CCObject* pSender);
 	void layerswitch(CCObject* pSender);
+    void updateScale();
 private:
 	LayerSwitcher* m_pLayerSwitcher;
 	MapControl* m_pControl;

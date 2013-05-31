@@ -19,7 +19,7 @@ cocos2d::CCString BingMapStrategy::getUrl( int x, int y, int z )
 		}
 		strUrl += digit;
 	}
-	char* pUrl = "http://r0.tiles.ditu.live.com/tiles/r%s.jpeg?g=91&mkt=zh-Hans&shading=hill";
+	const char* pUrl = "http://r0.tiles.ditu.live.com/tiles/r%s.jpeg?g=91&mkt=zh-Hans&shading=hill";
 
 	cocos2d::CCString strUrl2;
 	strUrl2.initWithFormat(pUrl,strUrl.c_str());

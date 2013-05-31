@@ -34,6 +34,7 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
 
 		ControlLayer* pControlLayer = new ControlLayer(pLayerSwitcher,pLayer);
 		scene->addChild(pControlLayer);
+        pLayer->attachControlLayer(pControlLayer);
     } while (0);
 
     // return the scene
