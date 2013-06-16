@@ -42,16 +42,16 @@ sunma支持内存缓存数据，以及sqlite的数据库格式
 
 ### 二、Show/效果展现
 
- sunmap on Mac OS(10.8.3 mac mini)  
+ sunmap on Mac OS(10.8.3 mac mini google satelite)  
  ![image](https://github.com/pasu/sunmap/raw/master/images/mac.png)
  
- sunmap on iPad4  
+ sunmap on iPad4(AMap)  
  ![image](https://github.com/pasu/sunmap/raw/master/images/ipad4.png)
  
- sunmap on Windows(Win7 64 laptop)  
+ sunmap on Windows(Win7 64 laptop ArcGis online)  
  ![image](https://github.com/pasu/sunmap/raw/master/images/win7.png)
  
- sunmap on Android Pad(Moto Pad)  
+ sunmap on Android Pad(Moto Pad google vector)  
  ![image](https://github.com/pasu/sunmap/raw/master/images/moto.png)
  
  sunmap family photo  
