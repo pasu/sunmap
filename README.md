@@ -1,11 +1,11 @@
 ### 一、Introduce/简介
 
-sunmap is a cross-platform map,you can run it anywhere such as iOS,Android,Windows,Mac OS and so on.I am not test on Linux.  
+sunmap is a cross-platform map,you can run it anywhere such as iOS,Android,Windows,Mac OS and so on.I have not test on Linux.  
 There are five importance I have to say at first:  
 1.sunmap is a map framework based on the cocos2d-x project,use coocs2d-x render(OpenGL ES).  
 2.sunmap now only support Web Mercator projection such as Google Maps,OpenStreetMaps,Bing Maps,ArcGis online,Map ABC.  
 3.Now,it still has a long way to go,and the project is a little disordered（main problem is about cross-platform folder）。I am afraid you can not run it on Android platform if you do not know much about cocos2d-x and Android NDK,
-and I have no help document to help you,I hope I can do this soon：）  
+and I do not supply help document to help you,I hope I can do this soon：）  
 4.I am not sure whether you can understand my poor English introduce,so I will try my best to make you understand my Chinese introduce:)  
 5.Why I name this project as sunmap,because the first name of my wife is Sun(孙)，last month,She has been sick,I hope nothing just bless she could enjoy life and understand life  
 
