@@ -34,12 +34,6 @@ sunmap是一个跨平台的地图，你可以在iOS，Windows，Android，Mac OS
 sunmap支持多点触摸的缩放和平移,多线程的瓦片下载，并且都是异步方式，你可以自设线程数目，默认为6  
 sunma支持内存缓存数据，以及sqlite的数据库格式  
 
-一些要做的事情
-1.定位以及纠偏
-2设备在地图的展现，比如相机，语音等
-3.Web APP的方式，比如位置共享，定位功能的深入应用
-4.SDK的方式，支持GML，一些vector的Geometry，style绘制，还有一些图表图形的展现效果等，参照OpenLayers的功能封装，这是我最感兴趣的，也是最有事可做的一个方向。
-
 ### 二、Show/效果展现
 
  sunmap on Mac OS(10.8.3 mac mini google satelite)  
