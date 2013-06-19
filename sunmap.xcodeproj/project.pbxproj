@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1608BC7C1771DBB900DA8649 /* MarkerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1608BC7B1771DBB900DA8649 /* MarkerLayer.cpp */; };
+		1608BC7E1771E50E00DA8649 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 1608BC7D1771E50E00DA8649 /* person.png */; };
 		FE0C62E1174CCAFE00F9F655 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C62E0174CCAFE00F9F655 /* QuartzCore.framework */; };
 		FE0C62E3174CCAFE00F9F655 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C62E2174CCAFE00F9F655 /* OpenGLES.framework */; };
 		FE0C62E5174CCAFE00F9F655 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C62E4174CCAFE00F9F655 /* OpenAL.framework */; };
@@ -273,6 +275,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1608BC7A1771DB8F00DA8649 /* MarkerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarkerLayer.h; path = Classes/MarkerLayer.h; sourceTree = "<group>"; };
+		1608BC7B1771DBB900DA8649 /* MarkerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MarkerLayer.cpp; path = Classes/MarkerLayer.cpp; sourceTree = "<group>"; };
+		1608BC7D1771E50E00DA8649 /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = person.png; path = Resources/person.png; sourceTree = "<group>"; };
 		FE0C62DD174CCAFE00F9F655 /* sunmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0C62E0174CCAFE00F9F655 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FE0C62E2174CCAFE00F9F655 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -887,6 +892,7 @@
 		FE0C62F1174CCAFE00F9F655 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1608BC7D1771E50E00DA8649 /* person.png */,
 				FE878E091754342900CD15FF /* scale1.png */,
 				FE878E0A1754342900CD15FF /* scale2.png */,
 				FE878E0B1754342900CD15FF /* scale3.png */,
@@ -1841,6 +1847,8 @@
 		FE0C65BE174CCB0300F9F655 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1608BC7B1771DBB900DA8649 /* MarkerLayer.cpp */,
+				1608BC7A1771DB8F00DA8649 /* MarkerLayer.h */,
 				FE62D7BF1752F3C10043B2A3 /* ControlLayer.cpp */,
 				FE62D7C01752F3C10043B2A3 /* ControlLayer.h */,
 				FE62D7C11752F3C10043B2A3 /* LayerSwitcher.cpp */,
@@ -1990,6 +1998,7 @@
 				FE878E2C1754342900CD15FF /* scale17.png in Resources */,
 				FE878E2D1754342900CD15FF /* scale18.png in Resources */,
 				FE878E2E1754342900CD15FF /* scale19.png in Resources */,
+				1608BC7E1771E50E00DA8649 /* person.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2213,6 +2222,7 @@
 				FE62D7C51752F3C10043B2A3 /* ControlLayer.cpp in Sources */,
 				FE62D7C61752F3C10043B2A3 /* LayerSwitcher.cpp in Sources */,
 				FE62D7C71752F3C10043B2A3 /* VisibleRect.cpp in Sources */,
+				1608BC7C1771DBB900DA8649 /* MarkerLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

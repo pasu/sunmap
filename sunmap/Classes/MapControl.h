@@ -33,6 +33,8 @@ public:
 	int getZoomLevel();
     
     void attachControlLayer(void* pControlLayer);
+    
+    CCPoint getGpsOffset();
 
 public:
 	enum CELL_Type

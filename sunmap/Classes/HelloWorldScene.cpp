@@ -3,6 +3,7 @@
 #include "MapStrategyFactory.h"
 #include "ControlLayer.h"
 #include "LayerSwitcher.h"
+#include "MarkerLayer.h"
 
 using namespace cocos2d;
 
@@ -35,6 +36,12 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
 		ControlLayer* pControlLayer = new ControlLayer(pLayerSwitcher,pLayer);
 		scene->addChild(pControlLayer);
         pLayer->attachControlLayer(pControlLayer);
+        
+        MarkerLayer* pMarkerLayer = new MarkerLayer(pLayer);
+        scene->addChild(pMarkerLayer);
+        pMarkerLayer->AddMarker("person.png", CCPoint(116.23,39.54));
+        pMarkerLayer->AddMarker("person.png", CCPoint(151.71,-33.55));
+
     } while (0);
 
     // return the scene

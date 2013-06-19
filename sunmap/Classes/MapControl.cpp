@@ -354,6 +354,11 @@ void MapControl::setCenter( double lat, double lon, int zoom )
 	goTo((int) p.x, (int) p.y, zoom, (int) off.x, (int) off.y);
 }
 
+CCPoint MapControl::getGpsOffset()
+{
+    return  m_GPSOffset;
+}
+
 void MapControl::goTo( int x, int y, int z, int offsetX, int offsetY )
 {
 	m_Map.goTo(x, y, z, offsetX, offsetY);
