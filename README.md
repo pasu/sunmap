@@ -1,11 +1,11 @@
 ### 一、Introduce/简介
 
-sunmap is a cross-platform map,you can run it anywhere such as iOS,Android,Windows,Mac OS and so on.I am not test on Linux.  
+sunmap is a cross-platform map,you can run it anywhere such as iOS,Android,Windows,Mac OS and so on.I have not test on Linux.  
 There are five importance I have to say at first:  
 1.sunmap is a map framework based on the cocos2d-x project,use coocs2d-x render(OpenGL ES).  
 2.sunmap now only support Web Mercator projection such as Google Maps,OpenStreetMaps,Bing Maps,ArcGis online,Map ABC.  
 3.Now,it still has a long way to go,and the project is a little disordered（main problem is about cross-platform folder）。I am afraid you can not run it on Android platform if you do not know much about cocos2d-x and Android NDK,
-and I have no help document to help you,I hope I can do this soon：）  
+and I do not supply help document to help you,I hope I can do this soon：）  
 4.I am not sure whether you can understand my poor English introduce,so I will try my best to make you understand my Chinese introduce:)  
 5.Why I name this project as sunmap,because the first name of my wife is Sun(孙)，last month,She has been sick,I hope nothing just bless she could enjoy life and understand life  
 
@@ -34,24 +34,18 @@ sunmap是一个跨平台的地图，你可以在iOS，Windows，Android，Mac OS
 sunmap支持多点触摸的缩放和平移,多线程的瓦片下载，并且都是异步方式，你可以自设线程数目，默认为6  
 sunma支持内存缓存数据，以及sqlite的数据库格式  
 
-一些要做的事情
-1.定位以及纠偏
-2设备在地图的展现，比如相机，语音等
-3.Web APP的方式，比如位置共享，定位功能的深入应用
-4.SDK的方式，支持GML，一些vector的Geometry，style绘制，还有一些图表图形的展现效果等，参照OpenLayers的功能封装，这是我最感兴趣的，也是最有事可做的一个方向。
-
 ### 二、Show/效果展现
 
- sunmap on Mac OS(10.8.3 mac mini)  
+ sunmap on Mac OS(10.8.3 mac mini google satelite)  
  ![image](https://github.com/pasu/sunmap/raw/master/images/mac.png)
  
- sunmap on iPad4  
+ sunmap on iPad4(AMap)  
  ![image](https://github.com/pasu/sunmap/raw/master/images/ipad4.png)
  
- sunmap on Windows(Win7 64 laptop)  
+ sunmap on Windows(Win7 64 laptop ArcGis online)  
  ![image](https://github.com/pasu/sunmap/raw/master/images/win7.png)
  
- sunmap on Android Pad(Moto Pad)  
+ sunmap on Android Pad(Moto Pad google vector)  
  ![image](https://github.com/pasu/sunmap/raw/master/images/moto.png)
  
  sunmap family photo  
