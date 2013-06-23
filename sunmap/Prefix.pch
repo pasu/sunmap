@@ -6,3 +6,5 @@
 	#import <Foundation/Foundation.h>
 	#import <UIKit/UIKit.h>
 #endif
+
+#define _ENABLE_RTREE

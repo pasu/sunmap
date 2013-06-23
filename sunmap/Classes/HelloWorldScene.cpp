@@ -4,8 +4,14 @@
 #include "ControlLayer.h"
 #include "LayerSwitcher.h"
 #include "MarkerLayer.h"
+#include "VectorLayer.h"
+
+#include <geos/geom/GeometryFactory.h>
+#include "geos/geom/Point.h"
 
 using namespace cocos2d;
+using namespace geos;
+using namespace geos::geom;
 
 CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
 {
@@ -41,7 +47,16 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
         scene->addChild(pMarkerLayer);
         pMarkerLayer->AddMarker("person.png", CCPoint(116.23,39.54));
         pMarkerLayer->AddMarker("person.png", CCPoint(151.71,-33.55));
-
+        
+        VectorLayer* pV = new VectorLayer(pLayer);
+        scene->addChild(pV);
+        
+        //const GeometryFactory* pF = geos::geom::GeometryFactory::getDefaultInstance();
+        
+        //Coordinate p(110,500);
+        //Point* p1 = pF->createPoint(p);
+        //pF->createLineString();        
+        //p1->getX();
     } while (0);
 
     // return the scene

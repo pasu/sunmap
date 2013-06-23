@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/HelloWorldScene.cpp"
-         timestampString = "393341068.989333"
+         timestampString = "393645791.90062"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
+         startingLineNumber = "44"
+         endingLineNumber = "44"
          landmarkName = "HelloWorld::scene(PublicMsgHandler* pHandle)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/HelloWorldScene.cpp"
-         timestampString = "393340499.664172"
+         timestampString = "393645791.90062"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "30"
-         endingLineNumber = "30"
+         startingLineNumber = "33"
+         endingLineNumber = "33"
          landmarkName = "HelloWorld::scene(PublicMsgHandler* pHandle)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -95,15 +95,15 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/HelloWorldScene.cpp"
-         timestampString = "393342436.975226"
+         timestampString = "393645791.90062"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
          landmarkName = "HelloWorld::scene(PublicMsgHandler* pHandle)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -131,6 +131,32 @@
          startingLineNumber = "121"
          endingLineNumber = "121"
          landmarkName = "MarkerLayer::ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/HelloWorldScene.cpp"
+         timestampString = "393645791.90062"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
+         landmarkName = "HelloWorld::scene(PublicMsgHandler* pHandle)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/VectorLayer.cpp"
+         timestampString = "393647303.749504"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
+         landmarkName = "VectorLayer::draw()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
