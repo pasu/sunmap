@@ -11,6 +11,7 @@
 
 #include "cocos2d.h"
 #include "MapControl.h"
+#include "Feature.h"
 
 USING_NS_CC;
 
@@ -19,6 +20,9 @@ class VectorLayer : public CCLayer
 public:
 	VectorLayer(MapControl* pControl);
     ~VectorLayer();
+    
+    void AddFeatureLayer(Feature* pFeature);
+    void AddFeatureLayers(Feature* pFeature,int length);
     
     virtual void draw();
 
@@ -32,8 +36,7 @@ public:
     
     
 private:
-    std::vector<CCMenu*> m_markers;
-    std::vector<CCPoint> m_pnt;
+    std::vector<Feature*> m_Features;
     MapControl* m_pControl;
     
     CCPoint m_tBeginPos;

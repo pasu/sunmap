@@ -21,26 +21,7 @@ VectorLayer::~VectorLayer()
 
 void VectorLayer::draw()
 {
-    static bool b = false;
-    if(b)
-    {
-        glLineWidth( 5.0f );
-        ccDrawColor4B(255,0,0,255);
-        ccDrawLine( VisibleRect::leftTop(), VisibleRect::rightBottom() );
-
-        return;
-    }
-    CHECK_GL_ERROR_DEBUG();
     
-	// draw a simple line
-	// The default state is:
-	// Line Width: 1
-	// color: 255,255,255,255 (white, non-transparent)
-	// Anti-Aliased
-    //	glEnable(GL_LINE_SMOOTH);
-    ccDrawLine( VisibleRect::leftBottom(), VisibleRect::rightTop() );
-    b = true;
-
 }
 
 void VectorLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
@@ -78,5 +59,17 @@ void VectorLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
     
     
     m_tBeginPos = touchLocation;
+}
+
+void VectorLayer::AddFeatureLayer(Feature* pFeature)
+{
+    m_Features.push_back(pFeature);
+}
+
+void VectorLayer::AddFeatureLayers(Feature* pFeature,int length)
+{
+    for (int i=0; i<length; i++) {
+        m_Features.push_back(pFeature++);
+    }
 }
 
