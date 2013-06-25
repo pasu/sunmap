@@ -151,11 +151,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sunmap/Classes/VectorLayer.cpp"
-         timestampString = "393647303.749504"
+         timestampString = "393860626.526037"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "24"
-         endingLineNumber = "24"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
+         landmarkName = "VectorLayer::draw()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sunmap/Classes/VectorLayer.cpp"
+         timestampString = "393860626.526037"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "VectorLayer::draw()"
          landmarkType = "5">
       </FileBreakpoint>

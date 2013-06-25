@@ -25,6 +25,8 @@ public:
     Feature(Geometry* pGeo);
     ~Feature();
     
+    Geometry* GetGeometry();
+    
     void SetStyle(const Style& style);
 private:
     Geometry* m_pGeo;

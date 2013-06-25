@@ -8,6 +8,15 @@
 
 #include "VectorLayer.h"
 #include "VisibleRect.h"
+#include "GeoUtils.h"
+#include <geos/geom/GeometryFactory.h>
+#include "geos/geom/CoordinateSequence.h"
+#include <geos/geom/CoordinateArraySequenceFactory.h>
+#include "Feature.h"
+#include "geos/geom/LinearRing.h"
+
+using namespace geos;
+using namespace geos::geom;
 
 VectorLayer::VectorLayer(MapControl* pControl)
 {
@@ -16,12 +25,74 @@ VectorLayer::VectorLayer(MapControl* pControl)
 
 VectorLayer::~VectorLayer()
 {
+    for (std::vector<Feature*>::iterator iter = m_Features.begin(); iter != m_Features.end(); ++iter)
+    {
+        Feature* pFeature = *iter;
+        delete  pFeature;
+        pFeature = NULL;
+    }
     
+    m_Features.clear();
 }
 
 void VectorLayer::draw()
 {
+    if (m_Features.size()==0) {
+        return;
+    }
     
+    RawTile dTile = m_pControl->getMap()->m_defTile;
+    CCPoint pntOffset = m_pControl->getMap()->getGlobalOffset();
+    
+    CCPoint pntTopLeft,pntRightBottom,pntMarker;
+    pntTopLeft.x= dTile.x*256 - pntOffset.x;
+    pntTopLeft.y= dTile.y*256 - pntOffset.y;
+    pntRightBottom.x = pntTopLeft.x + m_pControl->getMap()->getWidth();
+    pntRightBottom.y = pntTopLeft.y + m_pControl->getMap()->getHeight();
+    
+    int zoom = 17 - m_pControl->getZoomLevel();
+    
+    CCPoint pntMapTL,pntMapRB;
+    pntMapTL = GeoUtils::getLatLong(pntTopLeft.x, pntTopLeft.y, zoom);
+    pntMapRB = GeoUtils::getLatLong(pntRightBottom.x, pntRightBottom.y, zoom);
+    
+    std::vector<Coordinate> pntVector;
+    pntVector.push_back(Coordinate(pntMapTL.x,pntMapTL.y,0));
+    pntVector.push_back(Coordinate(pntMapTL.x,pntMapRB.y,0));
+    pntVector.push_back(Coordinate(pntMapRB.x,pntMapRB.y,0));
+    pntVector.push_back(Coordinate(pntMapRB.x,pntMapTL.y,0));
+    CoordinateSequence * cs = CoordinateArraySequenceFactory::instance()->create(&pntVector);
+    LinearRing* viewBounds = geos::geom::GeometryFactory::getDefaultInstance()->createLinearRing(cs);
+    //int zoom = 17 - m_pControl->getZoomLevel();
+    //double scale = (1 << (17 - zoom)) * GeoUtils::TILE_SIZE;
+    
+    //cocos2d::CCPoint pnt((int) (normalised.x * scale), (int) (normalised.y * scale));
+    //CCPoint offsetGps = m_pControl->getGpsOffset();
+    
+    //double latFix = lat + offsetGps.y*pow(10.0, -5);
+    //double lonFix = lon + offsetGps.x*pow(10.0, -5);
+    
+    for (std::vector<Feature*>::iterator iter = m_Features.begin(); iter != m_Features.end(); ++iter)
+    {
+        Feature* pFeature = *iter;
+        Geometry* pGeo = pFeature->GetGeometry();
+        if(!viewBounds->contains(pGeo))
+            continue;
+        
+        
+        
+        switch (pGeo->getGeometryTypeId()) {
+            case GEOS_POINT:
+                break;
+            case GEOS_POLYGON:
+                break;
+            case GEOS_LINESTRING:
+                break;               
+                
+            default:
+                break;
+        }
+    }
 }
 
 void VectorLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)

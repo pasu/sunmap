@@ -29,3 +29,8 @@ void Feature::SetStyle(const Style& style)
 {
     m_Style = style;
 }
+
+Geometry* Feature::GetGeometry()
+{
+    return m_pGeo;
+}
