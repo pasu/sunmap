@@ -21,6 +21,8 @@ using namespace geos::geom;
 VectorLayer::VectorLayer(MapControl* pControl)
 {
     m_pControl = pControl;
+    m_points = NULL;
+    m_nPntNum = 0;
 }
 
 VectorLayer::~VectorLayer()
@@ -33,6 +35,11 @@ VectorLayer::~VectorLayer()
     }
     
     m_Features.clear();
+    
+    if (m_points) {
+        delete []m_points;
+        m_points = NULL;
+    }
 }
 
 void VectorLayer::draw()
@@ -50,8 +57,8 @@ void VectorLayer::draw()
     pntRightBottom.x = pntTopLeft.x + m_pControl->getMap()->getWidth();
     pntRightBottom.y = pntTopLeft.y + m_pControl->getMap()->getHeight();
     
-    int zoom = 17 - m_pControl->getZoomLevel();
-    
+    int zoom = 17-m_pControl->getZoomLevel();
+    /*
     CCPoint pntMapTL,pntMapRB;
     pntMapTL = GeoUtils::getLatLong(pntTopLeft.x, pntTopLeft.y, zoom);
     pntMapRB = GeoUtils::getLatLong(pntRightBottom.x, pntRightBottom.y, zoom);
@@ -64,27 +71,48 @@ void VectorLayer::draw()
     CoordinateSequence * cs = CoordinateArraySequenceFactory::instance()->create(&pntVector);
     LinearRing* viewBounds = geos::geom::GeometryFactory::getDefaultInstance()->createLinearRing(cs);
     //int zoom = 17 - m_pControl->getZoomLevel();
-    //double scale = (1 << (17 - zoom)) * GeoUtils::TILE_SIZE;
+    */
+    double scale = (1 << (17 - zoom)) * GeoUtils::TILE_SIZE;
     
     //cocos2d::CCPoint pnt((int) (normalised.x * scale), (int) (normalised.y * scale));
     //CCPoint offsetGps = m_pControl->getGpsOffset();
     
     //double latFix = lat + offsetGps.y*pow(10.0, -5);
     //double lonFix = lon + offsetGps.x*pow(10.0, -5);
-    
+    ccDrawColor4B(0,0,255,128);
     for (std::vector<Feature*>::iterator iter = m_Features.begin(); iter != m_Features.end(); ++iter)
     {
         Feature* pFeature = *iter;
         Geometry* pGeo = pFeature->GetGeometry();
-        if(!viewBounds->contains(pGeo))
-            continue;
+        //if(!viewBounds->contains(pGeo))
+        //    continue;
         
+        int nCount = pGeo->getNumPoints();
+        CoordinateSequence* pCs = pGeo->getCoordinates();
         
+        if(m_points == NULL)
+        {
+            m_points = new CCPoint[nCount];
+        }
+        else if (nCount>m_nPntNum)
+        {
+            delete []m_points;
+            m_points = new CCPoint[nCount];
+            m_nPntNum = nCount;
+        }
         
+        for (int i=0;i<nCount; i++) {
+            
+            m_pnt = GeoUtils::toNormalisedPixelCoords(pCs->getAt(i).y, pCs->getAt(i).x);
+            m_points[i] = CCPoint(m_pnt.x*scale-pntTopLeft.x,m_pControl->getMap()->getHeight()-(m_pnt.y*scale-pntTopLeft.y));
+            //GeoUtils::toZoomedPixelCoords(pCs->getAt(i).x, pCs->getAt(i).y,zoom);
+            std::cout<<m_points[i].x<<"_"<<m_points[i].y<<std::endl;
+        }
         switch (pGeo->getGeometryTypeId()) {
             case GEOS_POINT:
                 break;
             case GEOS_POLYGON:
+                ccDrawSolidPoly( m_points, nCount, ccc4f(1,1,0,1) );
                 break;
             case GEOS_LINESTRING:
                 break;               
@@ -93,6 +121,11 @@ void VectorLayer::draw()
                 break;
         }
     }
+}
+
+void VectorLayer::drawPolygon(Feature* pF)
+{
+    return;
 }
 
 void VectorLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
@@ -104,14 +137,6 @@ void VectorLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 }
 void VectorLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 {
-    CCSetIterator it = pTouches->begin();
-    CCTouch* touch = (CCTouch*)(*it);
-    
-    CCPoint touchLocation = touch->getLocation();
-    
-    CCActionInterval* actionBy = CCMoveBy::create(0.1, CCPoint(touchLocation.x - m_tBeginPos.x,touchLocation.y - m_tBeginPos.y));
-    
-    this->runAction(actionBy);
     /*
     CCObject* child;
     
@@ -127,9 +152,6 @@ void VectorLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
     }
      */
     
-    
-    
-    m_tBeginPos = touchLocation;
 }
 
 void VectorLayer::AddFeatureLayer(Feature* pFeature)

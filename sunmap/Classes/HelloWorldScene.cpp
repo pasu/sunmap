@@ -7,7 +7,10 @@
 #include "VectorLayer.h"
 
 #include <geos/geom/GeometryFactory.h>
+#include "geos/geom/CoordinateArraySequenceFactory.h"
 #include "geos/geom/Point.h"
+#include "Feature.h"
+#include <geos/geom.h>
 
 using namespace cocos2d;
 using namespace geos;
@@ -50,6 +53,24 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
         
         VectorLayer* pV = new VectorLayer(pLayer);
         scene->addChild(pV);
+        
+                
+        CoordinateArraySequence * cs = new CoordinateArraySequence();
+        cs->add(Coordinate(116.23,39.54,0));
+        cs->add(Coordinate(116.23,42.54,0));
+        cs->add(Coordinate(118.23,42.54,0));
+        cs->add(Coordinate(118.23,39.54,0));
+        cs->add(Coordinate(116.23,39.54,0));
+        
+        GeometryFactory factory;
+        LinearRing* viewBounds = factory.createLinearRing(cs);
+        Polygon* p = GeometryFactory::getDefaultInstance()->createPolygon(viewBounds,NULL);
+        
+        int nCount = p->getNumPoints();
+        nCount = ((Geometry*)viewBounds)->clone()->getNumPoints();
+        //oordinateSequence* pCs = ((Geometry*)viewBounds)->getCoordinates();
+
+        pV->AddFeatureLayer(new Feature(p));
         
         //const GeometryFactory* pF = geos::geom::GeometryFactory::getDefaultInstance();
         

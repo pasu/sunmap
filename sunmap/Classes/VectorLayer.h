@@ -33,13 +33,19 @@ public:
 	virtual void ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent);
 	virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
 	//virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);
-    
+  
+private:
+    void drawPolygon(Feature* pF);
     
 private:
     std::vector<Feature*> m_Features;
     MapControl* m_pControl;
     
     CCPoint m_tBeginPos;
+    
+    CCPoint* m_points;
+    int m_nPntNum;
+    CCPoint m_pnt;
     
 };
 
