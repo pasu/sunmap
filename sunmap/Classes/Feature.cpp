@@ -34,3 +34,8 @@ Geometry* Feature::GetGeometry()
 {
     return m_pGeo;
 }
+
+const Style& Feature::GetStyle()
+{
+    return m_Style;
+}

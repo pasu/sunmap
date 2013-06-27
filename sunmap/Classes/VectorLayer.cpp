@@ -14,6 +14,7 @@
 #include <geos/geom/CoordinateArraySequenceFactory.h>
 #include "Feature.h"
 #include "geos/geom/LinearRing.h"
+#include "geos/geom/MultiPolygon.h"
 
 using namespace geos;
 using namespace geos::geom;
@@ -89,33 +90,92 @@ void VectorLayer::draw()
         
         int nCount = pGeo->getNumPoints();
         CoordinateSequence* pCs = pGeo->getCoordinates();
-        
-        if(m_points == NULL)
+        if(pGeo->getGeometryTypeId() != GEOS_MULTIPOLYGON &&
+           pGeo->getGeometryTypeId() != GEOS_MULTILINESTRING)
         {
-            m_points = new CCPoint[nCount];
-        }
-        else if (nCount>m_nPntNum)
-        {
-            delete []m_points;
-            m_points = new CCPoint[nCount];
-            m_nPntNum = nCount;
-        }
-        
-        for (int i=0;i<nCount; i++) {
+            if(m_points == NULL)
+            {
+                m_points = new CCPoint[nCount];
+            }
+            else if (nCount>m_nPntNum)
+            {
+                delete []m_points;
+                m_points = new CCPoint[nCount];
+                m_nPntNum = nCount;
+            }
             
-            m_pnt = GeoUtils::toNormalisedPixelCoords(pCs->getAt(i).y, pCs->getAt(i).x);
-            m_points[i] = CCPoint(m_pnt.x*scale-pntTopLeft.x,m_pControl->getMap()->getHeight()-(m_pnt.y*scale-pntTopLeft.y));
-            //GeoUtils::toZoomedPixelCoords(pCs->getAt(i).x, pCs->getAt(i).y,zoom);
-            std::cout<<m_points[i].x<<"_"<<m_points[i].y<<std::endl;
+            for (int i=0;i<nCount; i++) {
+                
+                m_pnt = GeoUtils::toNormalisedPixelCoords(pCs->getAt(i).y, pCs->getAt(i).x);
+                m_points[i] = CCPoint(m_pnt.x*scale-pntTopLeft.x,m_pControl->getMap()->getHeight()-(m_pnt.y*scale-pntTopLeft.y));
+                
+            }
         }
+        
+        
+        Style style = pFeature->GetStyle();
+        ccDrawColor4B(style.linecolor.r, style.linecolor.g, style.linecolor.b, style.linecolor.a);
         switch (pGeo->getGeometryTypeId()) {
             case GEOS_POINT:
+                ccPointSize(style.lineWidth);
+                ccDrawPoint(m_points[0]);
                 break;
             case GEOS_POLYGON:
-                ccDrawSolidPoly( m_points, nCount, ccc4f(1,1,0,1) );
+                glLineWidth(style.lineWidth);
+                ccDrawSolidPoly( m_points, nCount, ccc4f(style.fillcolor.r,style.fillcolor.g,style.fillcolor.b,style.fillcolor.a));
                 break;
             case GEOS_LINESTRING:
-                break;               
+                glLineWidth(style.lineWidth);
+                ccDrawPoly( m_points, nCount,false);
+                break;
+            case GEOS_LINEARRING:
+                glLineWidth(style.lineWidth);
+                ccDrawPoly( m_points, nCount,true);
+                break;
+            case GEOS_MULTIPOINT:
+                ccPointSize(style.lineWidth);
+                ccDrawPoints(m_points, nCount);
+                break;
+            case GEOS_MULTIPOLYGON:
+            case GEOS_MULTILINESTRING:
+            {
+                int nSubGeo = pGeo->getNumGeometries();
+                for (int j=0; j<nSubGeo; j++) {
+                    const Geometry* pSubGeo = pGeo->getGeometryN(j);
+                    nCount = pSubGeo->getNumPoints();
+                    pCs = pSubGeo->getCoordinates();
+                    if(m_points == NULL)
+                    {
+                        m_points = new CCPoint[nCount];
+                    }
+                    else if (nCount>m_nPntNum)
+                    {
+                        delete []m_points;
+                        m_points = new CCPoint[nCount];
+                        m_nPntNum = nCount;
+                    }
+                    
+                    for (int i=0;i<nCount; i++) {
+                        
+                        m_pnt = GeoUtils::toNormalisedPixelCoords(pCs->getAt(i).y, pCs->getAt(i).x);
+                        m_points[i] = CCPoint(m_pnt.x*scale-pntTopLeft.x,m_pControl->getMap()->getHeight()-(m_pnt.y*scale-pntTopLeft.y));
+                        
+                    }
+                    
+                    if (pSubGeo->getGeometryTypeId() == GEOS_POLYGON){
+                        glLineWidth(style.lineWidth);
+                        ccDrawSolidPoly( m_points, nCount, ccc4f(style.fillcolor.r,style.fillcolor.g,style.fillcolor.b,style.fillcolor.a));
+                    }else if(pSubGeo->getGeometryTypeId() == GEOS_LINEARRING){
+                        glLineWidth(style.lineWidth);
+                        ccDrawPoly( m_points, nCount,true);
+                    }else{
+                        glLineWidth(style.lineWidth);
+                        ccDrawPoly( m_points, nCount,false);
+                    }                
+                
+                }
+            }
+                break;
                 
             default:
                 break;
@@ -123,8 +183,9 @@ void VectorLayer::draw()
     }
 }
 
-void VectorLayer::drawPolygon(Feature* pF)
+void VectorLayer::drawFeature(Feature* pF)
 {
+    
     return;
 }
 

@@ -28,6 +28,7 @@ public:
     Geometry* GetGeometry();
     
     void SetStyle(const Style& style);
+    const Style& GetStyle();
 private:
     Geometry* m_pGeo;
     Style m_Style;

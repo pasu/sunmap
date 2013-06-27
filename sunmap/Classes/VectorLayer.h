@@ -35,7 +35,7 @@ public:
 	//virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);
   
 private:
-    void drawPolygon(Feature* pF);
+    void drawFeature(Feature* pF);
     
 private:
     std::vector<Feature*> m_Features;

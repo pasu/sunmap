@@ -13,11 +13,11 @@ Style::Style()
     lineWidth = 1.5;
     linecolor.r = 255;
     linecolor.g = linecolor.b = 0;
-    linecolor.a = 255;
+    linecolor.a = 128;
     
     fillcolor.r = 255;
     fillcolor.g = fillcolor.b = 0;
-    fillcolor.a = 255;
+    fillcolor.a = 128;
     
 }
 
