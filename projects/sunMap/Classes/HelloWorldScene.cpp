@@ -55,7 +55,7 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
 		VectorLayer* pV = new VectorLayer(pLayer);
 		scene->addChild(pV);
 
-/*
+
 		CoordinateArraySequence * cs = new CoordinateArraySequence();
 		cs->add(Coordinate(116.23,39.54,0));
 		cs->add(Coordinate(116.23,42.54,0));
@@ -72,7 +72,7 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
 		//oordinateSequence* pCs = ((Geometry*)viewBounds)->getCoordinates();
 
 		pV->AddFeatureLayer(new Feature(p));
-*/
+
 		//const GeometryFactory* pF = geos::geom::GeometryFactory::getDefaultInstance();
 
 		//Coordinate p(110,500);
