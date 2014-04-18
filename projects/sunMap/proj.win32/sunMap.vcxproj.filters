@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{21d7df8a-f78a-4ca4-bdbe-1c2363b91806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{91dd983e-520a-4b5e-885f-e4b9a2246f1b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SqliteLocalStorage.cpp">
+      <Filter>Include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AMapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ArcGisMapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BingMapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BitmapCache.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ControlLayer.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Feature.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GeoUtils.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GoogleSatelliteMapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GoogleTerrainMapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GoogleVectorMapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LayerSwitcher.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapControl.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapStrategyFactory.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MarkerLayer.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\OpenStreetMapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PhysicMap.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PublicMsgHandler.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RawTile.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\shell.c">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sqlite3.c">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Style.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TileLoader.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TiandituMapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SuperMapCloudMapStrategy.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TileResolver.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VectorLayer.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VisibleRect.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AMapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppMacros.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ArcGisMapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BingMapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BitmapCache.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ControlLayer.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Feature.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GeoUtils.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GoogleSatelliteMapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GoogleTerrainMapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GoogleVectorMapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LayerSwitcher.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapControl.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapStrategyFactory.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MarkerLayer.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\OpenStreetMapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PhysicMap.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PublicMsgHandler.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RawTile.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite3.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite3ext.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SqliteLocalStorage.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Style.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SuperMapCloudMapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TiandituMapStrategy.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TileLoader.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TileResolver.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VectorLayer.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VisibleRect.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
