@@ -12,7 +12,7 @@ LayerSwitcher::LayerSwitcher( CCScene* pScene,MapControl* pControl ): m_tBeginPo
 	m_pControl = pControl;
 
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
-	CCSprite* pSprite = CCSprite::create("Resources/combox.png");
+	CCSprite* pSprite = CCSprite::create("combox.png");
 
 	float nHeight = (MapStrategyFactory::m_mapStrategy.size() + 2) * LINE_SPACE;
 	pSprite->setPosition(ccp(size.width/2,size.height-nHeight/2));

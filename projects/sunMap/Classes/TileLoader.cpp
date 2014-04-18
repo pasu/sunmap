@@ -1,7 +1,11 @@
 #include "TileLoader.h"
 #include "curl/curl.h"
 #include "TileResolver.h"
+#ifdef WIN
 #include "pthread/pthread.h"
+#elseif
+#include <pthread.h>
+#endif
 
 #include "PhysicMap.h"
 

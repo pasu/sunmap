@@ -22,8 +22,8 @@ ControlLayer::ControlLayer( LayerSwitcher* pLayerSwitcher,MapControl* pControl )
 
 		// Create a "close" menu item with close icon, it's an auto release object.
 		CCMenuItemImage *pZoomIn = CCMenuItemImage::create(
-			"Resources/zoomin.png",
-			"Resources/zoomin.png",
+			"zoomin.png",
+			"zoomin.png",
 			this,
 			menu_selector(ControlLayer::zoomIn));
 		CC_BREAK_IF(! pZoomIn);
@@ -41,8 +41,8 @@ ControlLayer::ControlLayer( LayerSwitcher* pLayerSwitcher,MapControl* pControl )
 
 		// Create a "close" menu item with close icon, it's an auto release object.
 		CCMenuItemImage *pZoomOut = CCMenuItemImage::create(
-			"Resources/zoomout.png",
-			"Resources/zoomout.png",
+			"zoomout.png",
+			"zoomout.png",
 			this,
 			menu_selector(ControlLayer::zoomOut));
 		CC_BREAK_IF(! pZoomOut);
@@ -59,8 +59,8 @@ ControlLayer::ControlLayer( LayerSwitcher* pLayerSwitcher,MapControl* pControl )
 
 		// Create a "close" menu item with close icon, it's an auto release object.
 		CCMenuItemImage *pLayerSwitch = CCMenuItemImage::create(
-			"Resources/r_overlays.png",
-			"Resources/r_overlays.png",
+			"r_overlays.png",
+			"r_overlays.png",
 			this,
 			menu_selector(ControlLayer::layerswitch));
 		CC_BREAK_IF(! pLayerSwitch);
@@ -80,7 +80,7 @@ ControlLayer::ControlLayer( LayerSwitcher* pLayerSwitcher,MapControl* pControl )
 		for (int i=0;i<19;++i)
 		{
 			CCString str;
-			str.initWithFormat("Resources/scale%d.png",i+1);
+			str.initWithFormat("scale%d.png",i+1);
 			CCMenuItemImage *pScaleItem = CCMenuItemImage::create(str.getCString(),str.getCString());
 			CC_BREAK_IF(! pScaleItem);
 

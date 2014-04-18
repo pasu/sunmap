@@ -1,7 +1,11 @@
 #include "TileResolver.h"
 #include "PhysicMap.h"
 #include "curl/curl.h"
+#ifdef WIN
 #include "pthread/pthread.h"
+#elseif
+#include <pthread.h>
+#endif
 #include "MapStrategyFactory.h"
 
 void* Fun(void* arg)

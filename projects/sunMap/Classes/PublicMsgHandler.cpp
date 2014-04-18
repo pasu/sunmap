@@ -1,5 +1,9 @@
 #include "PublicMsgHandler.h"
+#ifdef WIN
 #include "pthread/pthread.h"
+#elseif
+#include <pthread.h>
+#endif
 #include "MapControl.h"
 #include "PhysicMap.h"
 

@@ -274,7 +274,7 @@ void PhysicMap::move( int dx, int dy )
 void PhysicMap::readBgData()
 {
 	m_pBg = new CCImage;
-	m_pBg->initWithImageFile("Resources/bg.png");
+	m_pBg->initWithImageFile("bg.png");
 }
 
 void PhysicMap::zoomS( double dz )

@@ -49,13 +49,13 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
 
 		MarkerLayer* pMarkerLayer = new MarkerLayer(pLayer);
 		scene->addChild(pMarkerLayer);
-		pMarkerLayer->AddMarker("Resources/person.png", CCPoint(116.23,39.54));
-		pMarkerLayer->AddMarker("Resources/person.png", CCPoint(151.71,-33.55));
+		pMarkerLayer->AddMarker("person.png", CCPoint(116.23,39.54));
+		pMarkerLayer->AddMarker("person.png", CCPoint(151.71,-33.55));
 
 		VectorLayer* pV = new VectorLayer(pLayer);
 		scene->addChild(pV);
 
-
+/*
 		CoordinateArraySequence * cs = new CoordinateArraySequence();
 		cs->add(Coordinate(116.23,39.54,0));
 		cs->add(Coordinate(116.23,42.54,0));
@@ -72,7 +72,7 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
 		//oordinateSequence* pCs = ((Geometry*)viewBounds)->getCoordinates();
 
 		pV->AddFeatureLayer(new Feature(p));
-
+*/
 		//const GeometryFactory* pF = geos::geom::GeometryFactory::getDefaultInstance();
 
 		//Coordinate p(110,500);

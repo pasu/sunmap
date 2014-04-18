@@ -1,5 +1,14 @@
 #include "BitmapCache.h"
+
+#ifdef WIN
 #include "pthread/pthread.h"
+#elseif
+#include <pthread.h>
+#endif
+
+
+
+
 
 static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
