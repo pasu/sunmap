@@ -1,9 +1,9 @@
 #include "TileResolver.h"
 #include "PhysicMap.h"
 #include "curl/curl.h"
-#ifdef WIN
+#ifdef WIN32
 #include "pthread/pthread.h"
-#elseif
+#else
 #include <pthread.h>
 #endif
 #include "MapStrategyFactory.h"

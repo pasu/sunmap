@@ -1,9 +1,9 @@
 #include "TileLoader.h"
 #include "curl/curl.h"
 #include "TileResolver.h"
-#ifdef WIN
+#ifdef WIN32
 #include "pthread/pthread.h"
-#elseif
+#else
 #include <pthread.h>
 #endif
 
