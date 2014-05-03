@@ -85,7 +85,7 @@ extern "C"
         return ;
     }
     
-    void Java_org_cocos2dx_sunmap_sunmap_nativeDownload(JNIEnv*  env, jobject thiz,jint nAddress)
+    void Java_com_map_sunMap_sunMap_nativeDownload(JNIEnv*  env, jobject thiz,jint nAddress)
     
     {
         RawTile* pTile = (RawTile*)nAddress;
@@ -185,7 +185,7 @@ void TileResolver::load( RawTile* pTile )
     JniMethodInfo JniLoadFun;
     
     JniHelper::getStaticMethodInfo(JniLoadFun,
-                                   "org/cocos2dx/sunmap/sunmap",
+                                   "com/map/sunMap/sunMap",
                                    "load",
                                    "(Ljava/lang/String;)V");
 

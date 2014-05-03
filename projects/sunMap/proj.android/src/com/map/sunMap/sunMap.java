@@ -25,13 +25,21 @@ package com.map.sunMap;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
+import org.cocos2dx.lib.TileLoaderJni;
 
 import android.os.Bundle;
 
 public class sunMap extends Cocos2dxActivity{
+	public static TileLoaderJni tileLoader;
+	
+	private static native void nativeDownload(int nTileAddress);
 	
     protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);	
+		
+		tileLoader = new TileLoaderJni();
+		
+		new Thread(tileLoader, "TileLoaderJni").start();
 	}
 
     public Cocos2dxGLSurfaceView onCreateView() {
@@ -41,6 +49,14 @@ public class sunMap extends Cocos2dxActivity{
     	
     	return glSurfaceView;
     }
+    
+    public static void load(String nTileAddress){
+		tileLoader.addToQueue(nTileAddress);
+	}
+	
+	public static void download(String nTileAddress){
+		nativeDownload(Integer.parseInt(nTileAddress));
+	}
 
     static {
         System.loadLibrary("cocos2dcpp");
