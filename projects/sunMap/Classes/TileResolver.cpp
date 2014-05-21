@@ -103,7 +103,7 @@ void TileResolver::load( RawTile* pTile )
 
 void TileResolver::updateMap( RawTile* pTile, CCImage* pTexture )
 {
-	if (pTile->s == m_nStrategyId) {
+	if (pTile->s == m_nStrategyId && m_pPhysicMap) {
 		((PhysicMap*)m_pPhysicMap)->update(pTexture, pTile);
 	}
 }
@@ -138,7 +138,10 @@ void TileResolver::setMapSourceId(int sourceId)
 	clearCache(true);
 	clearQueue();
 	//((PhysicMap*)m_pPhysicMap)->releaseCells();
-	((PhysicMap*)m_pPhysicMap)->reloadTiles();
+	if (m_pPhysicMap)
+	{
+		((PhysicMap*)m_pPhysicMap)->reloadTiles();
+	}
 }
 
 void TileResolver::clearCache(bool bForce )

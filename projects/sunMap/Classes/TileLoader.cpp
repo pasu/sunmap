@@ -9,7 +9,7 @@
 
 #include "PhysicMap.h"
 
-int TileLoader::Max_Thread =9;
+int TileLoader::Max_Thread =20;
 
 static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -86,16 +86,18 @@ void* download(void* pCurl)
                     pCurl = NULL;
                 }
             }
-						
-			if(((TileResolver*)(pTileResolver))->put2Cache(pTile,pImage))
+			else
 			{
-				((PhysicMap* )(((TileResolver*)(pTileResolver))->m_pPhysicMap))->m_pHandler->addEvent(pTile,pImage);
-			}
-			((TileResolver*)(pTileResolver))->m_pTileLoader->m_nCount--;
-			curl_easy_cleanup(curl);
+				if(((TileResolver*)(pTileResolver))->put2Cache(pTile,pImage))
+				{
+					((PhysicMap* )(((TileResolver*)(pTileResolver))->m_pPhysicMap))->m_pHandler->addEvent(pTile,pImage);
+				}
+				((TileResolver*)(pTileResolver))->m_pTileLoader->m_nCount--;
+				curl_easy_cleanup(curl);
 
-			delete (curl_data*)pCurl;
-			pCurl = NULL;
+				delete (curl_data*)pCurl;
+				pCurl = NULL;
+			}
 		}
 		else
 		{

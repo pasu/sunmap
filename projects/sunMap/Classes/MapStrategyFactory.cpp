@@ -8,6 +8,7 @@
 #include "SuperMapCloudMapStrategy.h"
 #include "AMapStrategy.h"
 #include "ArcGisMapStrategy.h"
+#include "BMapStrategy.h"
 
 int MapStrategyFactory::GOOGLE_VECTOR = 0;
 int MapStrategyFactory::GOOGLE_SATELLITE  = 1;
@@ -18,6 +19,7 @@ int MapStrategyFactory::BING_VECTOR= 5;
 //int MapStrategyFactory::SMCLOUD_VECTOR= 7;
 int MapStrategyFactory::AMAP_VECTOR= 6;
 int MapStrategyFactory::ArcMAP_VECTOR= 7;
+int MapStrategyFactory::BMAP_VECTOR= 8;
 
 std::map<int,MapStrategy*> MapStrategyFactory::m_mapStrategy;
 
@@ -61,5 +63,6 @@ void MapStrategyFactory::initMapStrategy()
 //	MapStrategyFactory::m_mapStrategy.insert(std::map<int,MapStrategy*>::value_type(MapStrategyFactory::SMCLOUD_VECTOR,new SuperMapCloudMapStrategy()));
 	MapStrategyFactory::m_mapStrategy.insert(std::map<int,MapStrategy*>::value_type(MapStrategyFactory::AMAP_VECTOR,new AMapStrategy()));
 	MapStrategyFactory::m_mapStrategy.insert(std::map<int,MapStrategy*>::value_type(MapStrategyFactory::ArcMAP_VECTOR,new ArcGisMapStrategy()));
+	MapStrategyFactory::m_mapStrategy.insert(std::map<int,MapStrategy*>::value_type(MapStrategyFactory::BMAP_VECTOR,new BMapStrategy()));
 }
 

@@ -16,6 +16,7 @@ public:
 	static int SMCLOUD_VECTOR;
 	static int AMAP_VECTOR;
 	static int ArcMAP_VECTOR;
+	static int BMAP_VECTOR;
 
 	MapStrategyFactory();
 	~MapStrategyFactory();

@@ -13,6 +13,7 @@
 #include "Feature.h"
 #include <geos/geom.h>
 
+#include "CacheMaker/CacheMaker.h"
 using namespace cocos2d;
 using namespace geos;
 using namespace geos::geom;
@@ -27,6 +28,28 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
 		CC_BREAK_IF(! scene);
 
 		MapStrategyFactory::initMapStrategy();
+
+		////////////////////////////////////////////
+		CCPoint pnt1,pnt2;
+		pnt1.x = 116.54;
+		pnt1.y = 59;
+
+		pnt2.x = 136;
+		pnt2.y = 39;
+
+		std::vector<int> nZoomArray;
+		nZoomArray.push_back(10);
+		nZoomArray.push_back(11);
+		nZoomArray.push_back(12);
+		nZoomArray.push_back(13);
+		nZoomArray.push_back(14);
+		CacheMaker make(pnt1,pnt2,nZoomArray,0);
+
+		make.setSavePath("E://Test");
+		make.setImageType(0);
+		make.generate();
+		////////////////////////////////////////////
+
 		// 'layer' is an autorelease object
 		RawTile tile(106,54,13,-1);
 		MapControl* pLayer = new MapControl(tile);

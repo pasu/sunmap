@@ -128,6 +128,8 @@
     <ClCompile Include="..\Classes\ArcGisMapStrategy.cpp" />
     <ClCompile Include="..\Classes\BingMapStrategy.cpp" />
     <ClCompile Include="..\Classes\BitmapCache.cpp" />
+    <ClCompile Include="..\Classes\BMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\CacheMaker\CacheMaker.cpp" />
     <ClCompile Include="..\Classes\ControlLayer.cpp" />
     <ClCompile Include="..\Classes\Feature.cpp" />
     <ClCompile Include="..\Classes\GeoUtils.cpp" />
@@ -148,10 +150,12 @@
     <ClCompile Include="..\Classes\sqlite3.c" />
     <ClCompile Include="..\Classes\SqliteLocalStorage.cpp" />
     <ClCompile Include="..\Classes\Style.cpp" />
+    <ClCompile Include="..\Classes\SunFile.cpp" />
     <ClCompile Include="..\Classes\SuperMapCloudMapStrategy.cpp" />
     <ClCompile Include="..\Classes\TiandituMapStrategy.cpp" />
     <ClCompile Include="..\Classes\TileLoader.cpp" />
     <ClCompile Include="..\Classes\TileResolver.cpp" />
+    <ClCompile Include="..\Classes\tools.cpp" />
     <ClCompile Include="..\Classes\VectorLayer.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="main.cpp" />
@@ -163,6 +167,8 @@
     <ClInclude Include="..\Classes\ArcGisMapStrategy.h" />
     <ClInclude Include="..\Classes\BingMapStrategy.h" />
     <ClInclude Include="..\Classes\BitmapCache.h" />
+    <ClInclude Include="..\Classes\BMapStrategy.h" />
+    <ClInclude Include="..\Classes\CacheMaker\CacheMaker.h" />
     <ClInclude Include="..\Classes\ControlLayer.h" />
     <ClInclude Include="..\Classes\Feature.h" />
     <ClInclude Include="..\Classes\GeoUtils.h" />
@@ -183,10 +189,12 @@
     <ClInclude Include="..\Classes\sqlite3ext.h" />
     <ClInclude Include="..\Classes\SqliteLocalStorage.h" />
     <ClInclude Include="..\Classes\Style.h" />
+    <ClInclude Include="..\Classes\SunFile.h" />
     <ClInclude Include="..\Classes\SuperMapCloudMapStrategy.h" />
     <ClInclude Include="..\Classes\TiandituMapStrategy.h" />
     <ClInclude Include="..\Classes\TileLoader.h" />
     <ClInclude Include="..\Classes\TileResolver.h" />
+    <ClInclude Include="..\Classes\tools.h" />
     <ClInclude Include="..\Classes\VectorLayer.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
     <ClInclude Include="main.h" />

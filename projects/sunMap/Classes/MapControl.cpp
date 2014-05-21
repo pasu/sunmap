@@ -170,7 +170,7 @@ void MapControl::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
             
             m_Map.setGlobalOffset(CCPoint(nMoveX,nMoveY));
             m_Map.quickHack();
-            updateScreen();
+            //updateScreen();
             m_tBeginPos = touchLocation;
             
             m_now.tv_usec = m_now2.tv_usec;

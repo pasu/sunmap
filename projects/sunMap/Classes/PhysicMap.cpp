@@ -97,7 +97,7 @@ void PhysicMap::loadCells( RawTile tile )
 			if (m_fScaleFactor-1<0.0000001) {
 				setBitmap(MapControl::CELL_BACKGROUND, i, j);
 			}
-			if (GeoUtils::isValid(tile)) {
+			if (m_pTileResolver->getMapSourceId() >7 || GeoUtils::isValid(tile) ) {
 				t++;
 				RawTile* pTile = new RawTile(x, y, PhysicMap::m_nZoom, m_pTileResolver->getMapSourceId());
 				m_pTileResolver->getTile(pTile);
