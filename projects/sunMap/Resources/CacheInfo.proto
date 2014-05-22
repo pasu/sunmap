@@ -1,0 +1,36 @@
+﻿message RawTile {
+  required uint32 x = 1;
+  required uint32 y = 2;
+  required uint32 z = 3;
+}
+
+message LodInfo {
+  required int32 level = 1;
+  required float scale = 2;
+  required int32 numTile2Need = 3;
+  required int32 numTileInDisk = 4;
+  repeated RawTile tileLost = 5;
+}
+
+message LodInfos {
+	required int32 numLevel = 1;
+	required int32 numTile2Need = 2;
+	required int32 numTileInDisk = 3;
+	repeated LodInfo lodInfos = 4;
+}
+
+message Bounds {
+	required float fXLeftTop = 1;
+	required float fYLeftTop = 1;
+	required float fXRightBottom = 1;
+	required float fYRightBottom = 1;
+}
+
+message CacheInfo {
+	required string name =1;
+	required Bounds bound = 2;
+	required bytes mapId = 3;
+	required bytes imageType = 4;
+	required float time = 5;
+	required LodInfos lods = 6;
+}

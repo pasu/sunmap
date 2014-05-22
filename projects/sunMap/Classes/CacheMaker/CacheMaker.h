@@ -32,6 +32,8 @@ public:
 
 	void generate();
 
+	void saveConfig();
+
 	//bool createDirectory(const char *path);
 
 private:

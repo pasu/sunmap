@@ -144,6 +144,9 @@
     <ClCompile Include="..\Classes\tools.cpp">
       <Filter>Core\Src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CacheMaker\CacheInfo.pb.cc">
+      <Filter>CacheMaker</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -256,6 +259,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\tools.h">
       <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CacheMaker\CacheInfo.pb.h">
+      <Filter>CacheMaker</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
