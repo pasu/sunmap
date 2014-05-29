@@ -19,11 +19,11 @@
 #error regenerate this file with a newer version of protoc.
 #endif
 
-#include <CacheMaker/google/protobuf/generated_message_util.h>
-#include <CacheMaker/google/protobuf/message.h>
-#include <CacheMaker/google/protobuf/repeated_field.h>
-#include <CacheMaker/google/protobuf/extension_set.h>
-#include <CacheMaker/google/protobuf/unknown_field_set.h>
+#include <google/protobuf/generated_message_util.h>
+#include <google/protobuf/message.h>
+#include <google/protobuf/repeated_field.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
 namespace sunMap {
@@ -204,7 +204,7 @@ class LodInfo : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 level() const;
   inline void set_level(::google::protobuf::int32 value);
 
-  // required float scale = 2;
+  // optional float scale = 2;
   inline bool has_scale() const;
   inline void clear_scale();
   static const int kScaleFieldNumber = 2;
@@ -218,17 +218,10 @@ class LodInfo : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 numtile2need() const;
   inline void set_numtile2need(::google::protobuf::int32 value);
 
-  // required int32 numTileInDisk = 4;
-  inline bool has_numtileindisk() const;
-  inline void clear_numtileindisk();
-  static const int kNumTileInDiskFieldNumber = 4;
-  inline ::google::protobuf::int32 numtileindisk() const;
-  inline void set_numtileindisk(::google::protobuf::int32 value);
-
-  // repeated .sunMap.CacheTile tileLost = 5;
+  // repeated .sunMap.CacheTile tileLost = 4;
   inline int tilelost_size() const;
   inline void clear_tilelost();
-  static const int kTileLostFieldNumber = 5;
+  static const int kTileLostFieldNumber = 4;
   inline const ::sunMap::CacheTile& tilelost(int index) const;
   inline ::sunMap::CacheTile* mutable_tilelost(int index);
   inline ::sunMap::CacheTile* add_tilelost();
@@ -245,19 +238,16 @@ class LodInfo : public ::google::protobuf::Message {
   inline void clear_has_scale();
   inline void set_has_numtile2need();
   inline void clear_has_numtile2need();
-  inline void set_has_numtileindisk();
-  inline void clear_has_numtileindisk();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int32 level_;
   float scale_;
-  ::google::protobuf::int32 numtile2need_;
-  ::google::protobuf::int32 numtileindisk_;
   ::google::protobuf::RepeatedPtrField< ::sunMap::CacheTile > tilelost_;
+  ::google::protobuf::int32 numtile2need_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
 
   friend void  protobuf_AddDesc_CacheInfo_2eproto();
   friend void protobuf_AssignDesc_CacheInfo_2eproto();
@@ -743,7 +733,7 @@ inline void LodInfo::set_level(::google::protobuf::int32 value) {
   level_ = value;
 }
 
-// required float scale = 2;
+// optional float scale = 2;
 inline bool LodInfo::has_scale() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -787,29 +777,7 @@ inline void LodInfo::set_numtile2need(::google::protobuf::int32 value) {
   numtile2need_ = value;
 }
 
-// required int32 numTileInDisk = 4;
-inline bool LodInfo::has_numtileindisk() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void LodInfo::set_has_numtileindisk() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void LodInfo::clear_has_numtileindisk() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void LodInfo::clear_numtileindisk() {
-  numtileindisk_ = 0;
-  clear_has_numtileindisk();
-}
-inline ::google::protobuf::int32 LodInfo::numtileindisk() const {
-  return numtileindisk_;
-}
-inline void LodInfo::set_numtileindisk(::google::protobuf::int32 value) {
-  set_has_numtileindisk();
-  numtileindisk_ = value;
-}
-
-// repeated .sunMap.CacheTile tileLost = 5;
+// repeated .sunMap.CacheTile tileLost = 4;
 inline int LodInfo::tilelost_size() const {
   return tilelost_.size();
 }

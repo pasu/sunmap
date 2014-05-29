@@ -14,6 +14,7 @@
 #include <geos/geom.h>
 
 #include "CacheMaker/CacheMaker.h"
+#include "Layer/LocalTileManager.h"
 using namespace cocos2d;
 using namespace geos;
 using namespace geos::geom;
@@ -30,29 +31,36 @@ CCScene* HelloWorld::scene(PublicMsgHandler* pHandle)
 		MapStrategyFactory::initMapStrategy();
 
 		////////////////////////////////////////////
-		CCPoint pnt1,pnt2;
-		pnt1.x = 116.54;
-		pnt1.y = 59;
+		if (true)
+		{
+			CCPoint pnt1,pnt2;
+			pnt1.x = 126.54;
+			pnt1.y = 49;
 
-		pnt2.x = 136;
-		pnt2.y = 39;
+			pnt2.x = 136;
+			pnt2.y = 39;
 
-		std::vector<int> nZoomArray;
-		nZoomArray.push_back(10);
-		nZoomArray.push_back(11);
-		nZoomArray.push_back(12);
-		nZoomArray.push_back(13);
-		nZoomArray.push_back(14);
-		CacheMaker make(pnt1,pnt2,nZoomArray,0);
+			std::vector<int> nZoomArray;
+			nZoomArray.push_back(10);
+			nZoomArray.push_back(11);
+			nZoomArray.push_back(12);
+			nZoomArray.push_back(13);
+			nZoomArray.push_back(14);
+			CacheMaker make("Test",pnt1,pnt2,nZoomArray,0);
 
-		make.setSavePath("E://Test");
-		make.setImageType(0);
-		make.generate();
+			make.setSavePath("E://Test");
+			make.setImageType("tiff");
+			make.generate();
+		}
+		
+		LocalSotrageManager::GetSingletonPtr()->AddLocalConfig("E://Test","Test.config");
 		////////////////////////////////////////////
 
 		// 'layer' is an autorelease object
 		RawTile tile(106,54,13,-1);
 		MapControl* pLayer = new MapControl(tile);
+		pLayer->setMapType(0);
+
 		pHandle->attach((void*)pLayer);
 		pLayer->getMap()->m_pHandler = pHandle;
 		pLayer->getMap()->getTileResolver()->setMapSourceId(0);

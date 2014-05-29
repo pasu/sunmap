@@ -16,6 +16,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     AppDelegate app;
     CCEGLView* eglView = CCEGLView::sharedOpenGLView();
     eglView->setViewName("sunMap");
-    eglView->setFrameSize(1440, 880);
+    eglView->setFrameSize(800, 600);
     return CCApplication::sharedApplication()->run();
 }

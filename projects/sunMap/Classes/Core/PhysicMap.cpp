@@ -22,7 +22,6 @@ PhysicMap::PhysicMap()
 	m_update = false;
 	m_pHandler = NULL;
 
-
 	readBgData();
 }
 
@@ -191,18 +190,13 @@ void PhysicMap::update( CCImage* pTexture, RawTile* pTile )
 void PhysicMap::updateMap()
 {
 	int loadedTiles = m_pTileResolver->getLoaded();
-	if (loadedTiles >= m_nTotalCells || m_nZoom > 13) {
+	if (true || loadedTiles >= m_nTotalCells || m_nZoom > 13) {
 		if (m_nInZoom != 0) {
 			m_pntGlobalOffset.x = (-1) * m_nInZoom * (m_nCorrectionX);
 			m_pntGlobalOffset.y = (-1) * m_nInZoom * (m_nCorrectionY);
 			m_nInZoom = 0;
 			m_fScaleFactor = 1.0;
 		}
-
-//		m_update = true;
-//		((MapControl*)(m_pMapControl))->updateScreen();
-// 		updateScreenCommand.execute();
-// 		SmoothZoomEngine.getInstance().nullScaleFactor();
 	}
 }
 
@@ -363,5 +357,10 @@ void PhysicMap::reloadTiles()
 int PhysicMap::getZoomLevel()
 {
 	return 17 - m_nZoom;
+}
+
+void PhysicMap::setMapType( int nType )
+{
+	m_pTileResolver->setMapType(nType);
 }
 

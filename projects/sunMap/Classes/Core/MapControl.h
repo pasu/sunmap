@@ -36,11 +36,14 @@ public:
     
     CCPoint getGpsOffset();
 
+	void setMapType(int nType);
+
 public:
 	enum CELL_Type
 	{
 		CELL_BACKGROUND = 0
 	};
+
 private:
 	PhysicMap m_Map;
 	CCPoint m_GPSOffset;

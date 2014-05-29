@@ -11,7 +11,7 @@ class CacheMaker
 {
 public:
 	CacheMaker();
-	CacheMaker(CCPoint pntLeftTop,CCPoint pntRightBottom,std::vector<int>& nZoomArray,int nMapStrategy);
+	CacheMaker(std::string strName,CCPoint pntLeftTop,CCPoint pntRightBottom,std::vector<int>& nZoomArray,int nMapStrategy);
 	~CacheMaker();
 
 	void setMaxThread(int nThread);
@@ -23,7 +23,7 @@ public:
 	void setSavePath(const char* strPath);
 	const char* getSavePath();
 
-	void setImageType(int nType);
+	void setImageType(std::string nType);
 	const char* getImageType();
 
 	bool build(CCPoint pntLeftTop,CCPoint pntRightBottom,std::vector<int>& nZoomArray,int nMapStrategy);
@@ -34,6 +34,8 @@ public:
 
 	void saveConfig();
 
+	void update(RawTile* pTile);
+
 	//bool createDirectory(const char *path);
 
 private:
@@ -42,6 +44,7 @@ private:
 	std::vector<int> m_NumberPerZoom;
 	std::vector<RawTile*> m_TileArray;
 	int m_nTotalCount;
+	int m_nNeedTodown;
 	int m_nMapStrategy;
 
 	MapStrategy* m_pMapStrategy;
@@ -50,8 +53,14 @@ private:
 
 	std::string m_strPath;
 	std::string m_strImageType;
-public:
+
 	int m_nThreadCount;
+	std::vector<RawTile> m_failTile;
+	std::string m_strName;
+
+	CCPoint m_pntLeftTop;
+	CCPoint m_pntRightBottom;
+	int m_nTime;
 };
 
 #endif

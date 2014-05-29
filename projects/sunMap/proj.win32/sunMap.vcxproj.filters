@@ -7,20 +7,8 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include">
-      <UniqueIdentifier>{21d7df8a-f78a-4ca4-bdbe-1c2363b91806}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src">
-      <UniqueIdentifier>{91dd983e-520a-4b5e-885f-e4b9a2246f1b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapPrivoder">
       <UniqueIdentifier>{1987e94a-c208-4f88-b3ba-185133f83f0a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="MapPrivoder\Include">
-      <UniqueIdentifier>{b53f6ebe-9f7c-455e-bac4-e67c1a47cc16}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="MapPrivoder\Src">
-      <UniqueIdentifier>{c896151a-fea5-47dd-b67a-4af642daa17d}</UniqueIdentifier>
     </Filter>
     <Filter Include="CacheMaker">
       <UniqueIdentifier>{8d9ec0c7-7728-4944-9a3b-8be150314f03}</UniqueIdentifier>
@@ -28,11 +16,8 @@
     <Filter Include="Core">
       <UniqueIdentifier>{509552d0-502b-4432-9756-916983929669}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Include">
-      <UniqueIdentifier>{1308ad35-c172-40fe-b276-6692237d4491}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Src">
-      <UniqueIdentifier>{0e1b4089-9857-4d32-b1d2-11813e07036a}</UniqueIdentifier>
+    <Filter Include="Layer">
+      <UniqueIdentifier>{b4cc0341-4bac-428e-90a2-764133fb0820}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -45,107 +30,116 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ControlLayer.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Feature.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\LayerSwitcher.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MarkerLayer.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\VectorLayer.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ArcGisMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\BingMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GoogleSatelliteMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GoogleTerrainMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GoogleVectorMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MapStrategyFactory.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\OpenStreetMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SuperMapCloudMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TiandituMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\BMapStrategy.cpp">
-      <Filter>MapPrivoder\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\CacheMaker\CacheMaker.cpp">
       <Filter>CacheMaker</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\BitmapCache.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\BitmapCache.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GeoUtils.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\CacheInfo.pb.cc">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\MapControl.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\FileOperation.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\PhysicMap.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\GeoUtils.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\PublicMsgHandler.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\MapControl.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\RawTile.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\PhysicMap.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\shell.c">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\PublicMsgHandler.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\sqlite3.c">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\RawTile.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Style.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\shell.c">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TileLoader.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\Singleton.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TileResolver.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\sqlite3.c">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\VisibleRect.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\SqliteLocalStorage.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\SqliteLocalStorage.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\Style.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\SunFile.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\SunFile.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\tools.cpp">
-      <Filter>Core\Src</Filter>
+    <ClCompile Include="..\Classes\Core\TileLoader.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CacheMaker\CacheInfo.pb.cc">
-      <Filter>CacheMaker</Filter>
+    <ClCompile Include="..\Classes\Core\TileResolver.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\tools.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\VisibleRect.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Layer\ControlLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Layer\Feature.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Layer\LayerSwitcher.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Layer\LocalTileManager.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Layer\MarkerLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Layer\VectorLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\AMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\ArcGisMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\BingMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\BMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\GoogleSatelliteMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\GoogleTerrainMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\GoogleVectorMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\MapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\MapStrategyFactory.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\OpenStreetMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\SuperMapCloudMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapPrivoder\TiandituMapStrategy.cpp">
+      <Filter>MapPrivoder</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,110 +152,119 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AppMacros.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ControlLayer.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Feature.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\LayerSwitcher.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MarkerLayer.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\VectorLayer.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ArcGisMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\BingMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GoogleSatelliteMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GoogleTerrainMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GoogleVectorMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\OpenStreetMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MapStrategyFactory.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SuperMapCloudMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TiandituMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\BMapStrategy.h">
-      <Filter>MapPrivoder\Include</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\CacheMaker\CacheMaker.h">
       <Filter>CacheMaker</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\BitmapCache.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\BitmapCache.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GeoUtils.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\CacheInfo.pb.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\MapControl.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\FileOperation.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\PhysicMap.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\GeoUtils.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\PublicMsgHandler.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\MapControl.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\RawTile.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\PhysicMap.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\sqlite3.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\PublicMsgHandler.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\sqlite3ext.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\RawTile.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\SqliteLocalStorage.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\Singleton.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Style.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\sqlite3.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TileLoader.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\sqlite3ext.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TileResolver.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\SqliteLocalStorage.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\VisibleRect.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\Style.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\SunFile.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\SunFile.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\tools.h">
-      <Filter>Core\Include</Filter>
+    <ClInclude Include="..\Classes\Core\TileLoader.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CacheMaker\CacheInfo.pb.h">
-      <Filter>CacheMaker</Filter>
+    <ClInclude Include="..\Classes\Core\TileResolver.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\tools.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\VisibleRect.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppMacros.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Layer\ControlLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Layer\Feature.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Layer\LayerSwitcher.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Layer\LocalTileManager.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Layer\MarkerLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Layer\VectorLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\AMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\ArcGisMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\BingMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\BMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\GoogleSatelliteMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\GoogleTerrainMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\GoogleVectorMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\MapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\MapStrategyFactory.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\OpenStreetMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\SuperMapCloudMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapPrivoder\TiandituMapStrategy.h">
+      <Filter>MapPrivoder</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

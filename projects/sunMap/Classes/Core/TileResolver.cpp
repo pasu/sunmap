@@ -7,6 +7,7 @@
 #include <pthread.h>
 #endif
 #include "MapStrategyFactory.h"
+#include "Layer/LocalTileManager.h"
 
 void* Fun(void* arg)
 {
@@ -29,6 +30,7 @@ TileResolver::TileResolver()
 	m_nLoaded = 0;
 	m_nStrategyId = 0;
 	m_pTileLoader = new TileLoader((void*)this);
+	m_MapType = TileResolver::Map_Hyber;
 	cthread();
 }
 
@@ -38,6 +40,7 @@ TileResolver::TileResolver( void* pPhysicMap )
 	m_nLoaded = 0;
 	m_nStrategyId = 0;
 	m_pTileLoader = new TileLoader((void*)this);
+	m_MapType = TileResolver::Map_Hyber;
 	cthread();
 }
 
@@ -69,30 +72,30 @@ void TileResolver::getTile(RawTile* pTile)
 	if (pTile->s == -1) {
 		return;
 	}	
-
+	
 	CCImage* pTexture = NULL;
-	pTexture = m_CacheProvider.getTile(pTile);
-	if(pTexture != NULL)
+	
+	if (m_MapType == TileResolver::Map_Hyber || m_MapType == TileResolver::Map_Cache)
 	{
-		m_nLoaded++;
-		updateMap(pTile,pTexture);
-	}
-	else
-	{
-		//pTexture = m_SqliteProvider.getTile(pTile);		
-
+		pTexture = m_CacheProvider.getTile(pTile);
+		if (pTexture == NULL)
+		{
+			pTexture = LocalSotrageManager::GetSingletonPtr()->getTile(pTile);
+		}
 		if(pTexture != NULL)
 		{
 			m_nLoaded++;
 			updateMap(pTile,pTexture);
-		}
-		else
-		{
-			m_nLoaded++;
-			load(pTile);
+			return ;
 		}
 	}
-	return ;
+	
+	if (m_MapType == TileResolver::Map_Hyber || m_MapType == TileResolver::Map_Service)
+	{
+		//pTexture = m_SqliteProvider.getTile(pTile);		
+		m_nLoaded++;
+		load(pTile);
+	}
 }
 
 void TileResolver::load( RawTile* pTile )
@@ -147,4 +150,9 @@ void TileResolver::setMapSourceId(int sourceId)
 void TileResolver::clearCache(bool bForce )
 {
 	m_CacheProvider.clear(bForce);
+}
+
+void TileResolver::setMapType( int nType )
+{
+	m_MapType = nType;
 }

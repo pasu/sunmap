@@ -11,9 +11,45 @@
 #endif
 
 #include "SunFile.h"
+#include "Core/CacheInfo.pb.h"
+#include "FileOperation.h"
+
 
 static pthread_mutex_t cachemutex = PTHREAD_MUTEX_INITIALIZER;
 
+
+#include "libtiff/tiffio.h"
+#include <iostream>
+#include <math.h>
+#include <vector>
+
+using namespace std;
+
+
+void save_tiff_rgb(string output_filename,int nWidth,int nHeight,const char* pImageData) {
+	TIFF *output_image;
+
+	// Open the TIFF file
+	if((output_image = TIFFOpen(output_filename.c_str(), "w")) == NULL){
+		cerr << "Unable to write tif file: " << output_filename << endl;
+	}
+
+	// We need to set some values for basic tags before we can add any data
+	TIFFSetField(output_image, TIFFTAG_IMAGEWIDTH, nWidth);
+	TIFFSetField(output_image, TIFFTAG_IMAGELENGTH, nHeight);
+	TIFFSetField(output_image, TIFFTAG_BITSPERSAMPLE, 8);
+	TIFFSetField(output_image, TIFFTAG_SAMPLESPERPIXEL, 4);
+	TIFFSetField(output_image, TIFFTAG_PLANARCONFIG, PLANARCONFIG_CONTIG);
+
+	TIFFSetField(output_image, TIFFTAG_COMPRESSION, COMPRESSION_DEFLATE);
+	TIFFSetField(output_image, TIFFTAG_PHOTOMETRIC, PHOTOMETRIC_RGB);
+
+	// Write the information to the file
+	TIFFWriteEncodedStrip(output_image, 0, (void* )pImageData, nWidth*nHeight* 3);
+
+	// Close the file
+	TIFFClose(output_image);
+}
 struct tileData
 {
 	RawTile* pRawTile;
@@ -84,7 +120,7 @@ void* downloadToSave(void* ppCurl)
 			else
 			{
 				pthread_mutex_lock(&cachemutex);
-				pData->pMaker->m_nThreadCount--;
+				pData->pMaker->update(pData->pRawTile);
 				pthread_mutex_unlock(&cachemutex );
 				delete pData;
 				pData = NULL;
@@ -93,7 +129,7 @@ void* downloadToSave(void* ppCurl)
 		else
 		{
 			pthread_mutex_lock(&cachemutex);
-			pData->pMaker->m_nThreadCount--;
+			pData->pMaker->update(NULL);
 			pthread_mutex_unlock(&cachemutex );
 
 			curl_easy_cleanup(curl);
@@ -114,7 +150,34 @@ void* downloadToSave(void* ppCurl)
 				pData->pRawTile->x,
 				pData->pMaker->getImageType());
 
-			pImage->saveToFile(strFile.getCString());
+			if (!SunFile::IsExist(strFile.getCString(),false))
+			{
+				std::string strName = pData->pMaker->getImageType();
+				if ( strName.compare("tiff")== 0)
+				{
+					unsigned char* m_pData = pImage->getData();
+					int m_nWidth,m_nHeight;
+					m_nWidth = m_nHeight = 256;
+					unsigned char *pTempData = new unsigned char[m_nWidth * m_nHeight * 3];
+
+					for (int i = 0; i < m_nHeight; ++i)
+					{
+						for (int j = 0; j < m_nWidth; ++j)
+						{
+							pTempData[(i * m_nWidth + j) * 3] = m_pData[(i * m_nWidth + j) * 4];
+							pTempData[(i * m_nWidth + j) * 3 + 1] = m_pData[(i * m_nWidth + j) * 4 + 1];
+							pTempData[(i * m_nWidth + j) * 3 + 2] = m_pData[(i * m_nWidth + j) * 4 + 2];
+						}
+					}
+
+					save_tiff_rgb(strFile.getCString(),256,256,(const char*)pTempData);
+					delete pTempData;
+				}
+				else
+				{
+					pImage->saveToFile(strFile.getCString());
+				}
+			}
 
 			delete pData;
 			pData = NULL;
@@ -136,7 +199,7 @@ void* downloadToSave(void* ppCurl)
 		else
 		{
 			pthread_mutex_lock(&cachemutex);
-			pData->pMaker->m_nThreadCount--;
+			pData->pMaker->update(pData->pRawTile);
 			pthread_mutex_unlock(&cachemutex );
 			delete pData;
 			pData = NULL;
@@ -145,12 +208,18 @@ void* downloadToSave(void* ppCurl)
 	return NULL;
 }
 
-CacheMaker::CacheMaker( CCPoint pntLeftTop,CCPoint pntRightBottom,std::vector<int>& nZoomArray, int nMapStrategy)
+CacheMaker::CacheMaker(std::string strName, CCPoint pntLeftTop,CCPoint pntRightBottom,std::vector<int>& nZoomArray, int nMapStrategy)
 {
+	m_strName = strName;
 	m_nMapStrategy = -1;
 	m_nTotalCount = 0;
 	m_nMaxThread = 10;
 	m_nThreadCount = 0;
+
+	m_pntLeftTop = pntLeftTop;
+	m_pntRightBottom = pntRightBottom;
+
+	m_nTime = 0;
 
 	m_pMapStrategy = NULL;
 	build(pntLeftTop,pntRightBottom,nZoomArray,nMapStrategy);
@@ -164,6 +233,7 @@ CacheMaker::CacheMaker()
 	m_nTotalCount = 0;
 	m_nMaxThread = 10; 
 	m_nThreadCount = 0;
+	m_nTime = 0;
 }
 
 CacheMaker::~CacheMaker()
@@ -234,10 +304,12 @@ void CacheMaker::clear()
 void CacheMaker::generate()
 {
 	m_pMapStrategy = MapStrategyFactory::getStrategy(m_nMapStrategy);
+	m_nNeedTodown = m_nTotalCount;
 
-	while (m_TileArray.size()>0)
+	clock_t begin = clock();
+	while (m_nNeedTodown>0)
 	{
-		if (m_nThreadCount<m_nMaxThread)
+		if (m_nThreadCount<m_nMaxThread && m_TileArray.size()>0)
 		{
 			RawTile* pTile = m_TileArray[m_TileArray.size()-1];
 			m_TileArray.pop_back();
@@ -255,6 +327,11 @@ void CacheMaker::generate()
 			pthread_create(&pid, NULL, downloadToSave, (void*)pData);
 		}
 	}
+	clock_t end = clock();
+
+	m_nTime = (end-begin)/1000;
+
+	saveConfig();
 }
 
 void CacheMaker::setMaxThread( int nThread )
@@ -287,15 +364,99 @@ const char* CacheMaker::getSavePath()
 	return m_strPath.c_str();
 }
 
-void CacheMaker::setImageType( int nType )
+void CacheMaker::setImageType(std::string nType )
 {
-	m_strImageType = "png";
+	m_strImageType = nType;
 }
 
 const char* CacheMaker::getImageType()
 {
 	return m_strImageType.c_str();
 }
+
+void CacheMaker::update( RawTile* pTile )
+{
+	m_nNeedTodown--;
+	m_nThreadCount--;
+	if(pTile != NULL)
+	{
+		RawTile tile(pTile->x,pTile->y,pTile->z,pTile->s);
+		m_failTile.push_back(tile);
+	}
+}
+
+void CacheMaker::saveConfig()
+{
+	sunMap::CacheInfo* pCache = new sunMap::CacheInfo;
+	pCache->set_name(m_strName.c_str());
+
+	sunMap::Bounds* pBounds = new sunMap::Bounds;
+	pBounds->set_left(m_pntLeftTop.x);
+	pBounds->set_top(m_pntLeftTop.y);
+	pBounds->set_right(m_pntRightBottom.x);
+	pBounds->set_bottom(m_pntRightBottom.y);
+
+	pCache->set_allocated_bound(pBounds);
+
+	CCString strMapId;
+	strMapId.initWithFormat("%d",m_nMapStrategy);
+	pCache->set_mapid(strMapId.getCString());
+
+	pCache->set_imagetype(m_strImageType.c_str());
+
+	pCache->set_time(m_nTime);
+
+	sunMap::LodInfos* pInfos = new sunMap::LodInfos;
+	pInfos->set_numlevel(m_ZoomArray.size());
+	pInfos->set_numtile2need(m_nTotalCount);
+	pInfos->set_numtileindisk(m_nTotalCount-m_failTile.size());
+
+	int nSize = m_ZoomArray.size();
+	for (int i = 0;i<nSize;i++)
+	{
+		sunMap::LodInfo* pInfo = pInfos->add_lodinfos();;
+		pInfo->set_level(m_ZoomArray[i]);
+		pInfo->set_numtile2need(m_NumberPerZoom[i]);
+	}
+
+	nSize = m_failTile.size();
+	for (int i=0;i<nSize;i++ )
+	{
+		RawTile tile = m_failTile[i];
+		int j = 0;
+		int count = m_ZoomArray.size();
+		for (j=0;j<count;j++)
+		{
+			if (m_ZoomArray[j] == tile.z)
+				break;
+		}
+		sunMap::LodInfo* pInfo = pInfos->mutable_lodinfos(j);
+		sunMap::CacheTile* pTile = pInfo->add_tilelost();
+		pTile->set_x(tile.x);
+		pTile->set_y(tile.y);
+		pTile->set_z(tile.z);
+	}
+
+	pCache->set_allocated_lods(pInfos);
+	
+	int length = pCache->ByteSize();
+	char* buf = new char[length];
+	pCache->SerializeToArray(buf,length);
+
+	FileOperation::saveFile(buf,length,m_strPath+"//"+m_strName + ".config");
+	delete pCache;
+	pCache = NULL;
+
+// 	delete pBounds;
+// 	pBounds = NULL;
+// 
+// 	delete pInfos;
+// 	pInfos = NULL;
+
+	delete []buf;
+	buf = NULL;
+}
+
 /*
 bool CacheMaker::createDirectory( const char *path )
 {

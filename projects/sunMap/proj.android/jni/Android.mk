@@ -9,33 +9,33 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
                    ../../Classes/HelloWorldScene.cpp \
-                   ../../Classes/ControlLayer.cpp \
-                   ../../Classes/VectorLayer.cpp \
-                   ../../Classes/Feature.cpp \
-                   ../../Classes/Style.cpp \
-                   ../../Classes/MarkerLayer.cpp \
-				   ../../Classes/VisibleRect.cpp \
-				   ../../Classes/LayerSwitcher.cpp \
-				   ../../Classes/PublicMsgHandler.cpp \
-				   ../../Classes/sqlite3.c \
-				   ../../Classes/AMapStrategy.cpp \
-				   ../../Classes/ArcGisMapStrategy.cpp \
-				   ../../Classes/BingMapStrategy.cpp \
-				   ../../Classes/BitmapCache.cpp \
-				   ../../Classes/GeoUtils.cpp \
-				   ../../Classes/GoogleSatelliteMapStrategy.cpp \
-				   ../../Classes/GoogleTerrainMapStrategy.cpp \
-				   ../../Classes/GoogleVectorMapStrategy.cpp \
-				   ../../Classes/MapControl.cpp \
-				   ../../Classes/MapStrategy.cpp \
-				   ../../Classes/MapStrategyFactory.cpp \
-				   ../../Classes/OpenStreetMapStrategy.cpp \
-				   ../../Classes/PhysicMap.cpp \
-				   ../../Classes/RawTile.cpp \
-				   ../../Classes/SqliteLocalStorage.cpp \
-				   ../../Classes/SuperMapCloudMapStrategy.cpp \
-				   ../../Classes/TiandituMapStrategy.cpp \
-				   ../../Classes/TileResolver_Android.cpp \
+                   ../../Classes/Layer/ControlLayer.cpp \
+                   ../../Classes/Layer/VectorLayer.cpp \
+                   ../../Classes/Layer/Feature.cpp \
+                   ../../Classes/Core/Style.cpp \
+                   ../../Classes/Layer/MarkerLayer.cpp \
+				   ../../Classes/Core/VisibleRect.cpp \
+				   ../../Classes/Layer/LayerSwitcher.cpp \
+				   ../../Classes/Core/PublicMsgHandler.cpp \
+				   ../../Classes/Core/sqlite3.c \
+				   ../../Classes/MapPrivoder/AMapStrategy.cpp \
+				   ../../Classes/MapPrivoder/ArcGisMapStrategy.cpp \
+				   ../../Classes/MapPrivoder/BingMapStrategy.cpp \
+				   ../../Classes/Core/BitmapCache.cpp \
+				   ../../Classes/Core/GeoUtils.cpp \
+				   ../../Classes/MapPrivoder/GoogleSatelliteMapStrategy.cpp \
+				   ../../Classes/MapPrivoder/GoogleTerrainMapStrategy.cpp \
+				   ../../Classes/MapPrivoder/GoogleVectorMapStrategy.cpp \
+				   ../../Classes/Core/MapControl.cpp \
+				   ../../Classes/MapPrivoder/MapStrategy.cpp \
+				   ../../Classes/MapPrivoder/MapStrategyFactory.cpp \
+				   ../../Classes/MapPrivoder/OpenStreetMapStrategy.cpp \
+				   ../../Classes/Core/PhysicMap.cpp \
+				   ../../Classes/Core/RawTile.cpp \
+				   ../../Classes/Core/SqliteLocalStorage.cpp \
+				   ../../Classes/MapPrivoder/SuperMapCloudMapStrategy.cpp \
+				   ../../Classes/MapPrivoder/TiandituMapStrategy.cpp \
+				   ../../Classes/Core/TileResolver_Android.cpp \
 				    ../../geos/capi/geos_c.cpp \
 	 ../../geos/capi/geos_ts_c.cpp \
 	 ../../geos/src/algorithm/Angle.cpp \

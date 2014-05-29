@@ -12,6 +12,14 @@ USING_NS_CC;
 class TileResolver
 {
 public:
+	enum Map_Type
+	{
+		Map_Hyber = 0,
+		Map_Service = 1,
+		Map_Cache = 2,
+	};
+
+public:
 	TileResolver();
 	TileResolver(void* pPhysicMap);
 	~TileResolver();
@@ -33,13 +41,14 @@ public:
 	 void clearCache(bool bForce = false);
 
 	 void load(RawTile* pTile);
+	 void setMapType(int nType);
 private:	
 	
 	void cthread();
 private:
 	
 	int m_nStrategyId;
-
+	int m_MapType;
 	
 
 public:

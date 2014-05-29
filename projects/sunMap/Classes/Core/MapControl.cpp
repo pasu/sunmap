@@ -435,3 +435,8 @@ int MapControl::getZoomLevel()
 {
 	return m_Map.getZoomLevel();
 }
+
+void MapControl::setMapType( int nType )
+{
+	m_Map.setMapType(nType);
+}

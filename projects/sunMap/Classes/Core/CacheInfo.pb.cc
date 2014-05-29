@@ -63,11 +63,10 @@ void protobuf_AssignDesc_CacheInfo_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CacheTile));
   LodInfo_descriptor_ = file->message_type(1);
-  static const int LodInfo_offsets_[5] = {
+  static const int LodInfo_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LodInfo, level_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LodInfo, scale_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LodInfo, numtile2need_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LodInfo, numtileindisk_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LodInfo, tilelost_),
   };
   LodInfo_reflection_ =
@@ -184,18 +183,18 @@ void protobuf_AddDesc_CacheInfo_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\017CacheInfo.proto\022\006sunMap\",\n\tCacheTile\022\t"
-    "\n\001x\030\001 \002(\r\022\t\n\001y\030\002 \002(\r\022\t\n\001z\030\003 \002(\r\"y\n\007LodIn"
-    "fo\022\r\n\005level\030\001 \002(\005\022\r\n\005scale\030\002 \002(\002\022\024\n\014numT"
-    "ile2Need\030\003 \002(\005\022\025\n\rnumTileInDisk\030\004 \002(\005\022#\n"
-    "\010tileLost\030\005 \003(\0132\021.sunMap.CacheTile\"l\n\010Lo"
-    "dInfos\022\020\n\010numLevel\030\001 \002(\005\022\024\n\014numTile2Need"
-    "\030\002 \002(\005\022\025\n\rnumTileInDisk\030\003 \002(\005\022!\n\010lodInfo"
-    "s\030\004 \003(\0132\017.sunMap.LodInfo\"B\n\006Bounds\022\014\n\004le"
-    "ft\030\001 \002(\002\022\013\n\003top\030\002 \002(\002\022\r\n\005right\030\003 \002(\002\022\016\n\006"
-    "bottom\030\004 \002(\002\"\210\001\n\tCacheInfo\022\014\n\004name\030\001 \002(\t"
-    "\022\035\n\005bound\030\002 \002(\0132\016.sunMap.Bounds\022\r\n\005mapId"
-    "\030\003 \002(\014\022\021\n\timageType\030\004 \002(\014\022\014\n\004time\030\005 \002(\002\022"
-    "\036\n\004lods\030\006 \002(\0132\020.sunMap.LodInfos", 511);
+    "\n\001x\030\001 \002(\r\022\t\n\001y\030\002 \002(\r\022\t\n\001z\030\003 \002(\r\"b\n\007LodIn"
+    "fo\022\r\n\005level\030\001 \002(\005\022\r\n\005scale\030\002 \001(\002\022\024\n\014numT"
+    "ile2Need\030\003 \002(\005\022#\n\010tileLost\030\004 \003(\0132\021.sunMa"
+    "p.CacheTile\"l\n\010LodInfos\022\020\n\010numLevel\030\001 \002("
+    "\005\022\024\n\014numTile2Need\030\002 \002(\005\022\025\n\rnumTileInDisk"
+    "\030\003 \002(\005\022!\n\010lodInfos\030\004 \003(\0132\017.sunMap.LodInf"
+    "o\"B\n\006Bounds\022\014\n\004left\030\001 \002(\002\022\013\n\003top\030\002 \002(\002\022\r"
+    "\n\005right\030\003 \002(\002\022\016\n\006bottom\030\004 \002(\002\"\210\001\n\tCacheI"
+    "nfo\022\014\n\004name\030\001 \002(\t\022\035\n\005bound\030\002 \002(\0132\016.sunMa"
+    "p.Bounds\022\r\n\005mapId\030\003 \002(\014\022\021\n\timageType\030\004 \002"
+    "(\014\022\014\n\004time\030\005 \002(\002\022\036\n\004lods\030\006 \002(\0132\020.sunMap."
+    "LodInfos", 488);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "CacheInfo.proto", &protobuf_RegisterTypes);
   CacheTile::default_instance_ = new CacheTile();
@@ -513,7 +512,6 @@ void CacheTile::Swap(CacheTile* other) {
 const int LodInfo::kLevelFieldNumber;
 const int LodInfo::kScaleFieldNumber;
 const int LodInfo::kNumTile2NeedFieldNumber;
-const int LodInfo::kNumTileInDiskFieldNumber;
 const int LodInfo::kTileLostFieldNumber;
 #endif  // !_MSC_VER
 
@@ -536,7 +534,6 @@ void LodInfo::SharedCtor() {
   level_ = 0;
   scale_ = 0;
   numtile2need_ = 0;
-  numtileindisk_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -575,7 +572,6 @@ void LodInfo::Clear() {
     level_ = 0;
     scale_ = 0;
     numtile2need_ = 0;
-    numtileindisk_ = 0;
   }
   tilelost_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -603,7 +599,7 @@ bool LodInfo::MergePartialFromCodedStream(
         break;
       }
 
-      // required float scale = 2;
+      // optional float scale = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
@@ -631,28 +627,12 @@ bool LodInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(32)) goto parse_numTileInDisk;
+        if (input->ExpectTag(34)) goto parse_tileLost;
         break;
       }
 
-      // required int32 numTileInDisk = 4;
+      // repeated .sunMap.CacheTile tileLost = 4;
       case 4: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_numTileInDisk:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &numtileindisk_)));
-          set_has_numtileindisk();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(42)) goto parse_tileLost;
-        break;
-      }
-
-      // repeated .sunMap.CacheTile tileLost = 5;
-      case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_tileLost:
@@ -661,7 +641,7 @@ bool LodInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(42)) goto parse_tileLost;
+        if (input->ExpectTag(34)) goto parse_tileLost;
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -689,7 +669,7 @@ void LodInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->level(), output);
   }
 
-  // required float scale = 2;
+  // optional float scale = 2;
   if (has_scale()) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->scale(), output);
   }
@@ -699,15 +679,10 @@ void LodInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->numtile2need(), output);
   }
 
-  // required int32 numTileInDisk = 4;
-  if (has_numtileindisk()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->numtileindisk(), output);
-  }
-
-  // repeated .sunMap.CacheTile tileLost = 5;
+  // repeated .sunMap.CacheTile tileLost = 4;
   for (int i = 0; i < this->tilelost_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->tilelost(i), output);
+      4, this->tilelost(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -723,7 +698,7 @@ void LodInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->level(), target);
   }
 
-  // required float scale = 2;
+  // optional float scale = 2;
   if (has_scale()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->scale(), target);
   }
@@ -733,16 +708,11 @@ void LodInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->numtile2need(), target);
   }
 
-  // required int32 numTileInDisk = 4;
-  if (has_numtileindisk()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->numtileindisk(), target);
-  }
-
-  // repeated .sunMap.CacheTile tileLost = 5;
+  // repeated .sunMap.CacheTile tileLost = 4;
   for (int i = 0; i < this->tilelost_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        5, this->tilelost(i), target);
+        4, this->tilelost(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -763,7 +733,7 @@ int LodInfo::ByteSize() const {
           this->level());
     }
 
-    // required float scale = 2;
+    // optional float scale = 2;
     if (has_scale()) {
       total_size += 1 + 4;
     }
@@ -775,15 +745,8 @@ int LodInfo::ByteSize() const {
           this->numtile2need());
     }
 
-    // required int32 numTileInDisk = 4;
-    if (has_numtileindisk()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->numtileindisk());
-    }
-
   }
-  // repeated .sunMap.CacheTile tileLost = 5;
+  // repeated .sunMap.CacheTile tileLost = 4;
   total_size += 1 * this->tilelost_size();
   for (int i = 0; i < this->tilelost_size(); i++) {
     total_size +=
@@ -827,9 +790,6 @@ void LodInfo::MergeFrom(const LodInfo& from) {
     if (from.has_numtile2need()) {
       set_numtile2need(from.numtile2need());
     }
-    if (from.has_numtileindisk()) {
-      set_numtileindisk(from.numtileindisk());
-    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -847,7 +807,7 @@ void LodInfo::CopyFrom(const LodInfo& from) {
 }
 
 bool LodInfo::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+  if ((_has_bits_[0] & 0x00000005) != 0x00000005) return false;
 
   for (int i = 0; i < tilelost_size(); i++) {
     if (!this->tilelost(i).IsInitialized()) return false;
@@ -860,7 +820,6 @@ void LodInfo::Swap(LodInfo* other) {
     std::swap(level_, other->level_);
     std::swap(scale_, other->scale_);
     std::swap(numtile2need_, other->numtile2need_);
-    std::swap(numtileindisk_, other->numtileindisk_);
     tilelost_.Swap(&other->tilelost_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);

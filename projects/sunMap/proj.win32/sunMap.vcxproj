@@ -69,7 +69,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..;..\geos\include;..\Classes\CacheMaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..\Classes\Core;..\Classes\Layer;..\Classes\MapPrivoder;..;..\geos\include;..\Classes\CacheMaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -81,7 +81,7 @@
       <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcocos2d.lib;opengl32.lib;glew32.lib;libcurl_imp.lib;pthreadVCE2.lib;geos.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcocos2d.lib;opengl32.lib;glew32.lib;libcurl_imp.lib;pthreadVCE2.lib;geos.lib;libprotobuf.lib;libtiff.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -97,7 +97,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..;..\geos\include;..\Classes\CacheMaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..\Classes\Core;..\Classes\Layer;..\Classes\MapPrivoder;..;..\geos\include;..\Classes\CacheMaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -123,82 +123,88 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Classes\AMapStrategy.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\ArcGisMapStrategy.cpp" />
-    <ClCompile Include="..\Classes\BingMapStrategy.cpp" />
-    <ClCompile Include="..\Classes\BitmapCache.cpp" />
-    <ClCompile Include="..\Classes\BMapStrategy.cpp" />
-    <ClCompile Include="..\Classes\CacheMaker\CacheInfo.pb.cc" />
     <ClCompile Include="..\Classes\CacheMaker\CacheMaker.cpp" />
-    <ClCompile Include="..\Classes\ControlLayer.cpp" />
-    <ClCompile Include="..\Classes\Feature.cpp" />
-    <ClCompile Include="..\Classes\GeoUtils.cpp" />
-    <ClCompile Include="..\Classes\GoogleSatelliteMapStrategy.cpp" />
-    <ClCompile Include="..\Classes\GoogleTerrainMapStrategy.cpp" />
-    <ClCompile Include="..\Classes\GoogleVectorMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\Core\BitmapCache.cpp" />
+    <ClCompile Include="..\Classes\Core\CacheInfo.pb.cc" />
+    <ClCompile Include="..\Classes\Core\FileOperation.cpp" />
+    <ClCompile Include="..\Classes\Core\GeoUtils.cpp" />
+    <ClCompile Include="..\Classes\Core\MapControl.cpp" />
+    <ClCompile Include="..\Classes\Core\PhysicMap.cpp" />
+    <ClCompile Include="..\Classes\Core\PublicMsgHandler.cpp" />
+    <ClCompile Include="..\Classes\Core\RawTile.cpp" />
+    <ClCompile Include="..\Classes\Core\shell.c" />
+    <ClCompile Include="..\Classes\Core\Singleton.cpp" />
+    <ClCompile Include="..\Classes\Core\sqlite3.c" />
+    <ClCompile Include="..\Classes\Core\SqliteLocalStorage.cpp" />
+    <ClCompile Include="..\Classes\Core\Style.cpp" />
+    <ClCompile Include="..\Classes\Core\SunFile.cpp" />
+    <ClCompile Include="..\Classes\Core\TileLoader.cpp" />
+    <ClCompile Include="..\Classes\Core\TileResolver.cpp" />
+    <ClCompile Include="..\Classes\Core\tools.cpp" />
+    <ClCompile Include="..\Classes\Core\VisibleRect.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
-    <ClCompile Include="..\Classes\LayerSwitcher.cpp" />
-    <ClCompile Include="..\Classes\MapControl.cpp" />
-    <ClCompile Include="..\Classes\MapStrategy.cpp" />
-    <ClCompile Include="..\Classes\MapStrategyFactory.cpp" />
-    <ClCompile Include="..\Classes\MarkerLayer.cpp" />
-    <ClCompile Include="..\Classes\OpenStreetMapStrategy.cpp" />
-    <ClCompile Include="..\Classes\PhysicMap.cpp" />
-    <ClCompile Include="..\Classes\PublicMsgHandler.cpp" />
-    <ClCompile Include="..\Classes\RawTile.cpp" />
-    <ClCompile Include="..\Classes\shell.c" />
-    <ClCompile Include="..\Classes\sqlite3.c" />
-    <ClCompile Include="..\Classes\SqliteLocalStorage.cpp" />
-    <ClCompile Include="..\Classes\Style.cpp" />
-    <ClCompile Include="..\Classes\SunFile.cpp" />
-    <ClCompile Include="..\Classes\SuperMapCloudMapStrategy.cpp" />
-    <ClCompile Include="..\Classes\TiandituMapStrategy.cpp" />
-    <ClCompile Include="..\Classes\TileLoader.cpp" />
-    <ClCompile Include="..\Classes\TileResolver.cpp" />
-    <ClCompile Include="..\Classes\tools.cpp" />
-    <ClCompile Include="..\Classes\VectorLayer.cpp" />
-    <ClCompile Include="..\Classes\VisibleRect.cpp" />
+    <ClCompile Include="..\Classes\Layer\ControlLayer.cpp" />
+    <ClCompile Include="..\Classes\Layer\Feature.cpp" />
+    <ClCompile Include="..\Classes\Layer\LayerSwitcher.cpp" />
+    <ClCompile Include="..\Classes\Layer\LocalTileManager.cpp" />
+    <ClCompile Include="..\Classes\Layer\MarkerLayer.cpp" />
+    <ClCompile Include="..\Classes\Layer\VectorLayer.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\AMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\ArcGisMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\BingMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\BMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\GoogleSatelliteMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\GoogleTerrainMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\GoogleVectorMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\MapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\MapStrategyFactory.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\OpenStreetMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\SuperMapCloudMapStrategy.cpp" />
+    <ClCompile Include="..\Classes\MapPrivoder\TiandituMapStrategy.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\AMapStrategy.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AppMacros.h" />
-    <ClInclude Include="..\Classes\ArcGisMapStrategy.h" />
-    <ClInclude Include="..\Classes\BingMapStrategy.h" />
-    <ClInclude Include="..\Classes\BitmapCache.h" />
-    <ClInclude Include="..\Classes\BMapStrategy.h" />
-    <ClInclude Include="..\Classes\CacheMaker\CacheInfo.pb.h" />
     <ClInclude Include="..\Classes\CacheMaker\CacheMaker.h" />
-    <ClInclude Include="..\Classes\ControlLayer.h" />
-    <ClInclude Include="..\Classes\Feature.h" />
-    <ClInclude Include="..\Classes\GeoUtils.h" />
-    <ClInclude Include="..\Classes\GoogleSatelliteMapStrategy.h" />
-    <ClInclude Include="..\Classes\GoogleTerrainMapStrategy.h" />
-    <ClInclude Include="..\Classes\GoogleVectorMapStrategy.h" />
+    <ClInclude Include="..\Classes\Core\BitmapCache.h" />
+    <ClInclude Include="..\Classes\Core\CacheInfo.pb.h" />
+    <ClInclude Include="..\Classes\Core\FileOperation.h" />
+    <ClInclude Include="..\Classes\Core\GeoUtils.h" />
+    <ClInclude Include="..\Classes\Core\MapControl.h" />
+    <ClInclude Include="..\Classes\Core\PhysicMap.h" />
+    <ClInclude Include="..\Classes\Core\PublicMsgHandler.h" />
+    <ClInclude Include="..\Classes\Core\RawTile.h" />
+    <ClInclude Include="..\Classes\Core\Singleton.h" />
+    <ClInclude Include="..\Classes\Core\sqlite3.h" />
+    <ClInclude Include="..\Classes\Core\sqlite3ext.h" />
+    <ClInclude Include="..\Classes\Core\SqliteLocalStorage.h" />
+    <ClInclude Include="..\Classes\Core\Style.h" />
+    <ClInclude Include="..\Classes\Core\SunFile.h" />
+    <ClInclude Include="..\Classes\Core\TileLoader.h" />
+    <ClInclude Include="..\Classes\Core\TileResolver.h" />
+    <ClInclude Include="..\Classes\Core\tools.h" />
+    <ClInclude Include="..\Classes\Core\VisibleRect.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
-    <ClInclude Include="..\Classes\LayerSwitcher.h" />
-    <ClInclude Include="..\Classes\MapControl.h" />
-    <ClInclude Include="..\Classes\MapStrategy.h" />
-    <ClInclude Include="..\Classes\MapStrategyFactory.h" />
-    <ClInclude Include="..\Classes\MarkerLayer.h" />
-    <ClInclude Include="..\Classes\OpenStreetMapStrategy.h" />
-    <ClInclude Include="..\Classes\PhysicMap.h" />
-    <ClInclude Include="..\Classes\PublicMsgHandler.h" />
-    <ClInclude Include="..\Classes\RawTile.h" />
-    <ClInclude Include="..\Classes\sqlite3.h" />
-    <ClInclude Include="..\Classes\sqlite3ext.h" />
-    <ClInclude Include="..\Classes\SqliteLocalStorage.h" />
-    <ClInclude Include="..\Classes\Style.h" />
-    <ClInclude Include="..\Classes\SunFile.h" />
-    <ClInclude Include="..\Classes\SuperMapCloudMapStrategy.h" />
-    <ClInclude Include="..\Classes\TiandituMapStrategy.h" />
-    <ClInclude Include="..\Classes\TileLoader.h" />
-    <ClInclude Include="..\Classes\TileResolver.h" />
-    <ClInclude Include="..\Classes\tools.h" />
-    <ClInclude Include="..\Classes\VectorLayer.h" />
-    <ClInclude Include="..\Classes\VisibleRect.h" />
+    <ClInclude Include="..\Classes\Layer\ControlLayer.h" />
+    <ClInclude Include="..\Classes\Layer\Feature.h" />
+    <ClInclude Include="..\Classes\Layer\LayerSwitcher.h" />
+    <ClInclude Include="..\Classes\Layer\LocalTileManager.h" />
+    <ClInclude Include="..\Classes\Layer\MarkerLayer.h" />
+    <ClInclude Include="..\Classes\Layer\VectorLayer.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\AMapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\ArcGisMapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\BingMapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\BMapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\GoogleSatelliteMapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\GoogleTerrainMapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\GoogleVectorMapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\MapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\MapStrategyFactory.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\OpenStreetMapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\SuperMapCloudMapStrategy.h" />
+    <ClInclude Include="..\Classes\MapPrivoder\TiandituMapStrategy.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

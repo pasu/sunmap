@@ -46,6 +46,8 @@ public:
     CCImage* getBgImage();
 
 	int getZoomLevel();
+
+	void setMapType(int nType);
 private:
 	void reload(int x, int y, int z);
 	void loadCells(RawTile tile);
